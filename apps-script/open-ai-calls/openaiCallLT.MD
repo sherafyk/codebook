@@ -1,4 +1,3 @@
-````markdown
 # 📘 Using `openaiCallLT` in Your Google Sheet
 
 This guide walks you through installing and using the `openaiCallLT` Apps Script function to generate AI completions based on a combined prompt in your spreadsheet. We’ll use:
@@ -80,7 +79,7 @@ This guide walks you through installing and using the `openaiCallLT` Apps Script
    
      outputRange.setValue(resultText);
    }
-````
+```
 
 4. **Save** your script.
 5. **Project Settings** (gear icon) → **Script Properties** → add a row:
