@@ -8,16 +8,20 @@
   <!-- Favicon -->
   <link rel="icon" type="image/webp" href="https://sherafy.com/data/uploads/2024/03/sherafy-logo-75x75.webp" />
 
-  <!-- GitHub-style Markdown CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@5.2.0/github-markdown-light.min.css" media="(prefers-color-scheme: light)" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@5.2.0/github-markdown-dark.min.css" media="(prefers-color-scheme: dark)" />
-
   <style>
+    :root {
+      --bg-color: #1e1e1e;         /* Dark gray background */
+      --text-color: #f3f0e0;       /* Ivory text */
+      --code-bg: #2a2a2a;          /* Slightly darker gray for code blocks */
+      --code-border: #3c3c3c;      /* Code block border */
+      --link-color: #70b7ff;       /* Muted light blue for links */
+    }
+
     body {
       margin: 0;
-      font-family: system-ui, sans-serif;
-      background-color: var(--bg-color, #fff);
-      color: var(--text-color, #000);
+      font-family: 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
     }
 
     #app {
@@ -27,8 +31,42 @@
     .markdown-body {
       max-width: 880px;
       margin: auto;
+      font-size: 16px;
+      line-height: 1.7;
     }
 
+    .markdown-body h1, 
+    .markdown-body h2, 
+    .markdown-body h3, 
+    .markdown-body h4 {
+      color: var(--text-color);
+    }
+
+    .markdown-body a {
+      color: var(--link-color);
+      text-decoration: none;
+    }
+
+    .markdown-body a:hover {
+      text-decoration: underline;
+    }
+
+    /* Custom code block styling */
+    pre {
+      background-color: var(--code-bg);
+      padding: 1rem;
+      border-radius: 5px;
+      border: 1px solid var(--code-border);
+      overflow-x: auto;
+    }
+
+    code {
+      background-color: var(--code-bg);
+      padding: 0.2em 0.4em;
+      border-radius: 3px;
+    }
+
+    /* Logo next to title */
     .app-name::before {
       content: "";
       display: inline-block;
