@@ -1,6 +1,6 @@
 * [Home](/)
 * Apps Script
-  * [Email Parser](/apps-script/email-parser)
+  * [Email Parser](/codebook/apps-script/email-parser)
   * [Auto Trigger](/apps-script/auto-trigger)
 * Python
   * [PDF Generator](/python/pdf-generator)
