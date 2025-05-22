@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Codebook – Sherafy</title>
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/webp" href="https://sherafy.com/data/uploads/2024/03/sherafy-logo-75x75.webp" />
+
   <!-- GitHub-style Markdown CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@5.2.0/github-markdown-light.min.css" media="(prefers-color-scheme: light)" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@5.2.0/github-markdown-dark.min.css" media="(prefers-color-scheme: dark)" />
@@ -25,6 +28,18 @@
       max-width: 880px;
       margin: auto;
     }
+
+    .app-name::before {
+      content: "";
+      display: inline-block;
+      vertical-align: middle;
+      width: 24px;
+      height: 24px;
+      margin-right: 8px;
+      background-image: url('https://sherafy.com/data/uploads/2024/03/sherafy-logo-75x75.webp');
+      background-size: cover;
+      border-radius: 4px;
+    }
   </style>
 </head>
 <body>
@@ -35,7 +50,7 @@
       name: 'Sherafy Codebook',
       loadSidebar: true,
       subMaxLevel: 2,
-      themeColor: '#2ea44f',
+      themeColor: '#2ea44f'
     }
   </script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
