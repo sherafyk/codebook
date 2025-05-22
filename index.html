@@ -1,19 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Sherafy Codebook</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="//unpkg.com/docsify/themes/vue.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Codebook – Sherafy</title>
+
+  <!-- GitHub-style Markdown CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@5.2.0/github-markdown-light.min.css" media="(prefers-color-scheme: light)" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@5.2.0/github-markdown-dark.min.css" media="(prefers-color-scheme: dark)" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background-color: var(--bg-color, #fff);
+      color: var(--text-color, #000);
+    }
+
+    #app {
+      padding: 2rem;
+    }
+
+    .markdown-body {
+      max-width: 880px;
+      margin: auto;
+    }
+  </style>
 </head>
 <body>
-  <div id="app">Loading…</div>
+  <div id="app" class="markdown-body">Loading…</div>
+
   <script>
     window.$docsify = {
       name: 'Sherafy Codebook',
       loadSidebar: true,
       subMaxLevel: 2,
-      themeColor: '#007acc'
+      themeColor: '#2ea44f',
     }
   </script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
