@@ -4,6 +4,6 @@ A growing archive of code snippets, automations, and guides — powered by AI an
 
 ### 📂 Categories
 
-- [Apps Script](/codebook/apps-script/email-parser)
+- [Apps Script](/apps-script/email-parser)
 - [Python](/python/pdf-generator)
 - [WordPress](/wordpress/post-sync)
