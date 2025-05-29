@@ -2,7 +2,7 @@
 
 A growing archive of code snippets, automations, and guides — powered by AI and practice.
 
-- [Bash Commands](#bash-commands)
+- [Bash Commands](##bash-commands)
 - [Python Snippets](#python-snippets)
 - [PHP Quick Reference](#php-quick-reference)
 - [ISPConfig Tips](#ispconfig-tips)
