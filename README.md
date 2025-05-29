@@ -16,3 +16,6 @@ A growing archive of code snippets, automations, and guides — powered by AI an
 ### Delete files recursively
 ```bash
 rm -rf /path/to/dir
+```
+`-r: Recursive (includes subdirectories)`
+`-f: Force (no prompt)`
