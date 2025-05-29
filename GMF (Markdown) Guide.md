@@ -66,8 +66,6 @@ Heading 2
   - Subitem 2.2
 ```
 
-**Ordered List:**
-
 ```markdown
 1. First item
 2. Second item
@@ -184,7 +182,7 @@ Use `- [ ]` for unchecked boxes and `- [x]` for checked boxes.
 
 ## Mentions and References
 
-* **User Mention**: `@username` (e.g., `@octocat`)
+* **User Mention**: `@username` (e.g., `@sherafyk`)
 * **Issue or PR Reference**: `#issue_number` (e.g., `#123`)
 * **Commit Reference**: Use the commit SHA (e.g., `16c999e`)
 
@@ -237,7 +235,21 @@ GitHub supports special blockquotes for alerts:
 > This is a caution.
 ```
 
-These alerts are rendered with distinctive colors and icons to emphasize the content.
+These alerts are rendered with distinctive colors and icons to emphasize the content. See the visual examples below:
+> [!NOTE]
+> This is a note.
+
+> [!TIP]
+> This is a tip.
+
+> [!IMPORTANT]
+> This is important information.
+
+> [!WARNING]
+> This is a warning.
+
+> [!CAUTION]
+> This is a caution.
 
 ---
 
