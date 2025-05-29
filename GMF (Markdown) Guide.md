@@ -128,6 +128,12 @@ def hello_world():
 ```
 </pre>
 
+It will show up like this:
+```python
+def hello_world():
+    print("Hello, world!")
+```
+
 ---
 
 ## Blockquotes
@@ -165,6 +171,64 @@ Create tables using pipes `|` and hyphens `-`.
 |--------|-------------|
 | Header | Title       |
 | Paragraph | Text     |
+```
+
+
+### 📋 Understanding Hyphens and Colons in Markdown Tables
+
+#### 🔹 Basic Table Structure
+
+In Markdown, tables are created using pipes `|` to separate columns and hyphens `-` to define the header row. The general structure is:
+
+```markdown
+| Column 1 | Column 2 |
+|----------|----------|
+| Data 1   | Data 2   |
+```
+
+* The first row defines the headers.
+* The second row, consisting of hyphens, separates the headers from the data.
+* Subsequent rows contain the data entries.
+
+**Note:** While the number of hyphens can vary, it's standard to use at least three for clarity.
+
+#### 🔹 Column Alignment with Colons
+
+Colons `:` are used within the hyphen row to specify text alignment within columns:
+
+* `:---` → Left-aligned
+* `:---:` → Center-aligned
+* `---:` → Right-aligned
+
+**Example:**
+
+```markdown
+| Left Aligned | Center Aligned | Right Aligned |
+|:-------------|:--------------:|--------------:|
+| Data 1       | Data 2         | Data 3        |
+```
+
+This will render as:
+
+| Left Aligned | Center Aligned | Right Aligned |
+| :----------- | :------------: | ------------: |
+| Data 1       |     Data 2     |        Data 3 |
+
+---
+
+### 🛠 Additional Tips for Markdown Tables
+
+* **Consistency:** Ensure each row has the same number of columns to maintain table integrity.
+* **Spacing:** While not mandatory, adding spaces between pipes and content enhances readability.
+* **Escaping Pipes:** If your data contains a pipe character `|`, escape it using a backslash `\|` or use the HTML entity `&#124;`.
+
+**Example:**
+
+```markdown
+| Item       | Description       |
+|------------|-------------------|
+| Item \| A  | Contains a pipe   |
+| Item B     | No special chars  |
 ```
 
 ---
