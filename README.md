@@ -2,8 +2,17 @@
 
 A growing archive of code snippets, automations, and guides — powered by AI and practice.
 
-### 📂 Categories
+- [Bash Commands](#bash-commands)
+- [Python Snippets](#python-snippets)
+- [PHP Quick Reference](#php-quick-reference)
+- [ISPConfig Tips](#ispconfig-tips)
+- [Google Apps Script](#google-apps-script)
+- [Cheat Sheets](#cheat-sheets)
 
-- [Apps Script](/apps-script/email-parser)
-- [Python](/python/pdf-generator)
-- [WordPress](/wordpress/post-sync)
+---
+
+## Bash Commands
+
+### Delete files recursively
+```bash
+rm -rf /path/to/dir
