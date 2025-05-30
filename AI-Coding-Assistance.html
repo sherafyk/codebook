@@ -2,136 +2,109 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Coding Project Context Template</title>
+  <title>Coding Project Context Template (Inline Copy-Paste)</title>
   <style>
-    body { font-family: sans-serif; margin: 2em; background: #f6f7fa; color: #222; }
+    body { font-family: sans-serif; background: #f6f7fa; margin: 2em; color: #222; }
     h1 { margin-top: 1.2em; }
     h2 { margin: 1.5em 0 0.7em 0; font-size: 1.08em; color: #184D79; }
-    table { border-collapse: collapse; width: 100%; background: none; margin-bottom: 1em; }
-    tr, td { border: none; background: none; padding: 0.17em 0 0.17em 0; vertical-align: top; }
-    td:first-child { font-weight: bold; white-space: nowrap; padding-right: 0.6em; }
-    input[type="text"] {
-      width: 75%; min-width: 160px; padding: 0.25em 0.5em;
-      border: 1px solid #ccd; border-radius: 3px; font-size: 1em;
-      background: #f9f9fc; margin-right: 0.4em;
+    .field { margin-bottom: 0.35em; }
+    [contenteditable] {
+      background: #f9f9fc; border-radius: 3px; padding: 2px 6px;
+      min-width: 120px; display: inline-block;
+      border: 1px dotted #ccd;
+      outline: none;
     }
-    textarea {
-      width: 75%; min-width: 160px; padding: 0.28em 0.5em;
-      border: 1px solid #ccd; border-radius: 3px; font-size: 1em;
-      background: #f9f9fc; resize: vertical; margin-right: 0.4em;
-      min-height: 2em;
+    .multiline {
+      min-width: 220px; min-height: 2.2em; display: inline-block;
+      vertical-align: top; white-space: pre-wrap;
     }
-    textarea.big { min-height: 4em; }
+    .big { min-height: 4em; }
     .tip { background: #e7f4fa; border-left: 4px solid #2ba4dc; padding: 0.8em; margin-bottom: 1.4em; border-radius: 5px; }
     .copy-area { background: #f3f6fc; border: 1px dashed #b5c3db; padding: 0.7em; margin-top: 1.5em; border-radius: 5px; }
     .section { margin-bottom: 2em; }
+    ::selection { background: #b0d7fc; }
   </style>
 </head>
 <body>
   <h1>Coding Project Context Template</h1>
-
   <div class="tip">
     <b>Tip:</b>
     <ul>
-      <li>Fill in all relevant sections before your specific coding request</li>
-      <li>If some sections are too specific or out of scope, you can omit</li>
-      <li>Be as specific as possible with paths, versions, and configurations</li>
-      <li>Include any unique aspects of your setup that differ from standard installations</li>
-      <li>The final request explicitly asks the LLM to probe for missing context</li>
-      <li>Adapt sections based on your project type (web app, API, desktop app, etc.)</li>
+      <li>Edit each field inline. Select all, copy, and paste—your answers will be in line, with labels and answers together.</li>
+      <li>For multiline answers, just type and use Shift+Enter for line breaks if needed.</li>
     </ul>
   </div>
-
   <div class="copy-area">
     <b>Copy below this line, edit, and pass to LLM.</b>
   </div>
 
   <div class="section">
     <h2>System Environment &amp; Infrastructure</h2>
-    <table>
-      <tr><td>Operating System:</td><td><input type="text" placeholder="e.g., Debian 12, Ubuntu 22.04, Windows 11"></td></tr>
-      <tr><td>Web Server:</td><td><input type="text" placeholder="e.g., Apache 2.4, Nginx 1.18, IIS"></td></tr>
-      <tr><td>Control Panel:</td><td><input type="text" placeholder="e.g., ISPConfig, cPanel, Plesk, or none"></td></tr>
-      <tr><td>Domain/URL:</td><td><input type="text" placeholder="your-domain.com"></td></tr>
-      <tr><td>Document/Web Root:</td><td><input type="text" placeholder="e.g., /var/www/clients/client0/web1/web/"></td></tr>
-      <tr><td>Project Root:</td><td><input type="text" placeholder="e.g., /var/www/clients/client0/web1/project/"></td></tr>
-      <tr><td>Database:</td><td><input type="text" placeholder="MySQL 8.0, PostgreSQL 14, SQLite, etc."></td></tr>
-      <tr><td>Runtime Environment:</td><td><input type="text" placeholder="Node.js v18, Python 3.11, PHP 8.2, etc."></td></tr>
-    </table>
+    <div class="field"><b>Operating System:</b> <span contenteditable="true">e.g., Debian 12, Ubuntu 22.04, Windows 11</span></div>
+    <div class="field"><b>Web Server:</b> <span contenteditable="true">e.g., Apache 2.4, Nginx 1.18, IIS</span></div>
+    <div class="field"><b>Control Panel:</b> <span contenteditable="true">e.g., ISPConfig, cPanel, Plesk, or none</span></div>
+    <div class="field"><b>Domain/URL:</b> <span contenteditable="true">your-domain.com</span></div>
+    <div class="field"><b>Document/Web Root:</b> <span contenteditable="true">e.g., /var/www/clients/client0/web1/web/</span></div>
+    <div class="field"><b>Project Root:</b> <span contenteditable="true">e.g., /var/www/clients/client0/web1/project/</span></div>
+    <div class="field"><b>Database:</b> <span contenteditable="true">MySQL 8.0, PostgreSQL 14, SQLite, etc.</span></div>
+    <div class="field"><b>Runtime Environment:</b> <span contenteditable="true">Node.js v18, Python 3.11, PHP 8.2, etc.</span></div>
   </div>
 
   <div class="section">
     <h2>Current Project Architecture</h2>
-    <table>
-      <tr><td>Framework/CMS:</td><td><input type="text" placeholder="e.g., Strapi, WordPress, Laravel, Express.js"></td></tr>
-      <tr><td>Frontend Technology:</td><td><input type="text" placeholder="React, Vue, vanilla JS, static HTML"></td></tr>
-      <tr><td>Backend Location:</td><td><input type="text" placeholder="Full path if separate from web root"></td></tr>
-      <tr><td>API Endpoints:</td><td><textarea placeholder="Existing API structure/routes"></textarea></td></tr>
-      <tr><td>Build Tools:</td><td><input type="text" placeholder="webpack, Vite, npm scripts, etc."></td></tr>
-      <tr><td>Process Management:</td><td><input type="text" placeholder="PM2, systemd, supervisor, etc."></td></tr>
-    </table>
+    <div class="field"><b>Framework/CMS:</b> <span contenteditable="true">e.g., Strapi, WordPress, Laravel, Express.js</span></div>
+    <div class="field"><b>Frontend Technology:</b> <span contenteditable="true">React, Vue, vanilla JS, static HTML</span></div>
+    <div class="field"><b>Backend Location:</b> <span contenteditable="true">Full path if separate from web root</span></div>
+    <div class="field"><b>API Endpoints:</b> <span contenteditable="true" class="multiline">Existing API structure/routes</span></div>
+    <div class="field"><b>Build Tools:</b> <span contenteditable="true">webpack, Vite, npm scripts, etc.</span></div>
+    <div class="field"><b>Process Management:</b> <span contenteditable="true">PM2, systemd, supervisor, etc.</span></div>
   </div>
 
   <div class="section">
     <h2>Network &amp; Security Configuration</h2>
-    <table>
-      <tr><td>SSL/HTTPS Status:</td><td><input type="text" placeholder="configured/not configured"></td></tr>
-      <tr><td>Proxy Configuration:</td><td><textarea placeholder="Existing Apache/Nginx proxy rules"></textarea></td></tr>
-      <tr><td>Firewall/Ports:</td><td><textarea placeholder="Relevant open ports and restrictions"></textarea></td></tr>
-      <tr><td>Authentication:</td><td><input type="text" placeholder="JWT, sessions, OAuth, etc."></td></tr>
-    </table>
+    <div class="field"><b>SSL/HTTPS Status:</b> <span contenteditable="true">configured/not configured</span></div>
+    <div class="field"><b>Proxy Configuration:</b> <span contenteditable="true" class="multiline">Existing Apache/Nginx proxy rules</span></div>
+    <div class="field"><b>Firewall/Ports:</b> <span contenteditable="true" class="multiline">Relevant open ports and restrictions</span></div>
+    <div class="field"><b>Authentication:</b> <span contenteditable="true">JWT, sessions, OAuth, etc.</span></div>
   </div>
 
   <div class="section">
     <h2>Current State &amp; Working Components</h2>
-    <table>
-      <tr><td>What's Currently Working:</td><td><textarea class="big" placeholder="List functional features"></textarea></td></tr>
-      <tr><td>What's in Web Directory:</td><td><textarea class="big" placeholder="Current contents of document root"></textarea></td></tr>
-      <tr><td>Existing Configuration Files:</td><td><textarea class="big" placeholder="Relevant config files and their locations"></textarea></td></tr>
-      <tr><td>Dependencies Installed:</td><td><textarea class="big" placeholder="Key packages, versions"></textarea></td></tr>
-      <tr><td>Permission Structure:</td><td><textarea class="big" placeholder="User/group ownership, any permission constraints"></textarea></td></tr>
-    </table>
+    <div class="field"><b>What's Currently Working:</b> <span contenteditable="true" class="multiline big">List functional features</span></div>
+    <div class="field"><b>What's in Web Directory:</b> <span contenteditable="true" class="multiline big">Current contents of document root</span></div>
+    <div class="field"><b>Existing Configuration Files:</b> <span contenteditable="true" class="multiline big">Relevant config files and their locations</span></div>
+    <div class="field"><b>Dependencies Installed:</b> <span contenteditable="true" class="multiline big">Key packages, versions</span></div>
+    <div class="field"><b>Permission Structure:</b> <span contenteditable="true" class="multiline big">User/group ownership, any permission constraints</span></div>
   </div>
 
   <div class="section">
     <h2>Project Goals &amp; Requirements</h2>
-    <table>
-      <tr><td>Primary Objective:</td><td><textarea class="big" placeholder="What you're trying to accomplish"></textarea></td></tr>
-      <tr><td>Specific Features Needed:</td><td><textarea class="big" placeholder="Detailed feature requirements"></textarea></td></tr>
-      <tr><td>URL Structure Plan:</td><td><textarea placeholder="How you want routes organized"></textarea></td></tr>
-      <tr><td>Performance Requirements:</td><td><textarea placeholder="Any speed/optimization needs"></textarea></td></tr>
-      <tr><td>Integration Points:</td><td><textarea placeholder="APIs, third-party services, etc."></textarea></td></tr>
-    </table>
+    <div class="field"><b>Primary Objective:</b> <span contenteditable="true" class="multiline big">What you're trying to accomplish</span></div>
+    <div class="field"><b>Specific Features Needed:</b> <span contenteditable="true" class="multiline big">Detailed feature requirements</span></div>
+    <div class="field"><b>URL Structure Plan:</b> <span contenteditable="true" class="multiline">How you want routes organized</span></div>
+    <div class="field"><b>Performance Requirements:</b> <span contenteditable="true" class="multiline">Any speed/optimization needs</span></div>
+    <div class="field"><b>Integration Points:</b> <span contenteditable="true" class="multiline">APIs, third-party services, etc.</span></div>
   </div>
 
   <div class="section">
     <h2>Known Constraints &amp; Preferences</h2>
-    <table>
-      <tr><td>ISP/Hosting Limitations:</td><td><textarea placeholder="Shared hosting restrictions, etc."></textarea></td></tr>
-      <tr><td>Technology Preferences:</td><td><textarea placeholder="Preferred libraries, patterns, etc."></textarea></td></tr>
-      <tr><td>Compatibility Requirements:</td><td><textarea placeholder="Browser support, mobile, etc."></textarea></td></tr>
-      <tr><td>Deployment Constraints:</td><td><textarea placeholder="CI/CD, manual deployment, etc."></textarea></td></tr>
-    </table>
+    <div class="field"><b>ISP/Hosting Limitations:</b> <span contenteditable="true" class="multiline">Shared hosting restrictions, etc.</span></div>
+    <div class="field"><b>Technology Preferences:</b> <span contenteditable="true" class="multiline">Preferred libraries, patterns, etc.</span></div>
+    <div class="field"><b>Compatibility Requirements:</b> <span contenteditable="true" class="multiline">Browser support, mobile, etc.</span></div>
+    <div class="field"><b>Deployment Constraints:</b> <span contenteditable="true" class="multiline">CI/CD, manual deployment, etc.</span></div>
   </div>
 
   <div class="section">
     <h2>Development Context</h2>
-    <table>
-      <tr><td>Development Stage:</td><td><input type="text" placeholder="Initial setup, mid-development, production ready"></td></tr>
-      <tr><td>Team Size:</td><td><input type="text" placeholder="Solo, small team, etc."></td></tr>
-      <tr><td>Maintenance Requirements:</td><td><textarea placeholder="Long-term maintainability needs"></textarea></td></tr>
-      <tr><td>Documentation Needs:</td><td><textarea placeholder="Level of commenting/docs required"></textarea></td></tr>
-    </table>
+    <div class="field"><b>Development Stage:</b> <span contenteditable="true">Initial setup, mid-development, production ready</span></div>
+    <div class="field"><b>Team Size:</b> <span contenteditable="true">Solo, small team, etc.</span></div>
+    <div class="field"><b>Maintenance Requirements:</b> <span contenteditable="true" class="multiline">Long-term maintainability needs</span></div>
+    <div class="field"><b>Documentation Needs:</b> <span contenteditable="true" class="multiline">Level of commenting/docs required</span></div>
   </div>
 
   <div class="section">
     <h2>REQUEST: Based on this context, I need help with</h2>
-    <table>
-      <tr>
-        <td>[specific coding task]:</td>
-        <td><textarea class="big" placeholder="Describe your specific coding task or question here"></textarea></td>
-      </tr>
-    </table>
+    <div class="field"><b>[specific coding task]:</b> <span contenteditable="true" class="multiline big">Describe your specific coding task or question here</span></div>
   </div>
 
   <div class="copy-area">
