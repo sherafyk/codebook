@@ -87,3 +87,13 @@ ul, ol {
   padding-left: 2em;
 }
 
+/* Simple Admonition Styling for [!NOTE] etc */
+.markdown-body blockquote:has(strong:contains("[!NOTE]")),
+.markdown-body blockquote:has(strong:contains("[!INFO]")),
+.markdown-body blockquote:has(strong:contains("[!WARNING]")),
+.markdown-body blockquote:has(strong:contains("[!TIP]")) {
+  border-left: 4px solid #58a6ff;
+  background-color: #161b22;
+  padding: 1em;
+  border-radius: 6px;
+}
