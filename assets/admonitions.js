@@ -1,3 +1,5 @@
+/*
+
 document.querySelectorAll('.markdown-body blockquote').forEach(blockquote => {
   const text = blockquote.textContent.trim();
   if (text.startsWith('[!NOTE]')) {
