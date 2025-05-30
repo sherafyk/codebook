@@ -1,6 +1,19 @@
 ## CODING PROJECT CONTEXT TEMPLATE
 This template ensures the LLM has comprehensive context and prompts it to ask follow-up questions rather than making assumptions.  
 
+  <div class="section">
+    <h2>System Environment &amp; Infrastructure</h2>
+    <div class="field"><b>Operating System:</b> <span contenteditable="true">e.g., Debian 12, Ubuntu 22.04, Windows 11</span></div>
+    <div class="field"><b>Web Server:</b> <span contenteditable="true">e.g., Apache 2.4, Nginx 1.18, IIS</span></div>
+    <div class="field"><b>Control Panel:</b> <span contenteditable="true">e.g., ISPConfig, cPanel, Plesk, or none</span></div>
+    <div class="field"><b>Domain/URL:</b> <span contenteditable="true">your-domain.com</span></div>
+    <div class="field"><b>Document/Web Root:</b> <span contenteditable="true">e.g., /var/www/clients/client0/web1/web/</span></div>
+    <div class="field"><b>Project Root:</b> <span contenteditable="true">e.g., /var/www/clients/client0/web1/project/</span></div>
+    <div class="field"><b>Database:</b> <span contenteditable="true">MySQL 8.0, PostgreSQL 14, SQLite, etc.</span></div>
+    <div class="field"><b>Runtime Environment:</b> <span contenteditable="true">Node.js v18, Python 3.11, PHP 8.2, etc.</span></div>
+  </div>
+  
+
 ## Begin prompt
 
 > [!TIP]
