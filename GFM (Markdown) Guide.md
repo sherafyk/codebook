@@ -1,5 +1,5 @@
 # GitHub Flavored Markdown (GFM) – Comprehensive Guide for Solopreneurs
-**Updated:** 2025-May-29 @1733  
+**Updated:** 2025-May-29 @18:04 PDT
 **By:** Sherafgan Khan [(@sherafyk)](https://github.com/sherafyk)
 
 **GitHub Flavored Markdown (GFM)** is a lightweight markup language for formatting text on GitHub. It builds on standard Markdown with **extended features** that make it easy to style your content in README files, issues, pull requests, comments, and more. This guide provides a **comprehensive, intuitive reference** for GFM, targeted at technically literate solopreneurs (even if you’re not an expert developer). Use it as a go-to resource for formatting text on GitHub.
@@ -73,9 +73,13 @@ Markdown is a plain text formatting syntax that converts easily to HTML. GitHub 
 
 Let’s start with core Markdown syntax that works on GitHub. These basics cover 90% of typical formatting needs.
 
-### Headings
-
 <details>
+ 
+<summary>
+ 
+### Headings
+ 
+</summary>
 
 Headings help structure your content with different levels (like chapters, sections, sub-sections). In Markdown, you create a heading by prefixing your text with one or more `#` symbols:
 
@@ -108,9 +112,13 @@ This would render as a hierarchy of headings. The number of `#` determines the h
 
 </details>
 
+<details>
+ 
+<summary>
+
 ### Paragraphs and Line Breaks
 
-<details>
+</summary>
  
 **Paragraphs:** In Markdown, a new paragraph is created by leaving a blank line between lines of text. Simply continue text on the next line (with no blank line) to keep it in the **same paragraph**, or add an empty line to start a **new paragraph**. Paragraph text will wrap automatically in the rendered view.
 
@@ -136,9 +144,13 @@ The two trailing spaces (`␣␣`) ensure that “This will appear on a new line
 
 </details>
 
+<details>
+ 
+<summary>
+
 ### Emphasis and Text Styles
 
-<details>
+</summary>
 
 You can emphasize text using *italics*, **bold**, or ***both***. GFM also supports other text styles like strikethrough and even subscripts/superscripts via HTML.
 
@@ -172,9 +184,13 @@ These will render as: *Italic* and *also italic*, **Bold** and **bold too**, ***
 
 </details>
 
+<details>
+ 
+<summary>
+
 ### Blockquotes
 
-<details>
+</summary>
 
 Blockquotes are used to indicate quoted text, epigraphs, or even as simple call-out boxes. On GitHub, a blockquote is created with the `>` symbol at the start of a line:
 
@@ -213,9 +229,13 @@ Each additional `>` adds another indent level (rendered with multiple gray bars)
 
 </details>
 
+<details>
+ 
+<summary>
+
 ### Lists
 
-<details>
+</summary>
 
 Lists are a fundamental way to organize information. GFM supports **unordered lists** (bullets), **ordered lists** (numbered), and **task lists** (checklists).
 
@@ -317,9 +337,13 @@ In the above, the dash for the sub-item is indented 4 spaces from the “1.” o
 
 </details>
 
+<details>
+ 
+<summary>
+
 ### Task Lists (Checklists)
 
-<details>
+</summary>
 
 Task lists are a special feature of GFM to create checkboxes. They are extremely useful for tracking to-dos in issues or project boards, and for README checklists.
 
@@ -353,9 +377,13 @@ On GitHub, an unchecked box appears empty and a checked box is filled with a che
 
 </details>
 
+<details>
+ 
+<summary>
+ 
 ### Code and Syntax Highlighting
 
-<details>
+</summary>
 
 Displaying code or command-line output in Markdown requires special formatting so it’s shown as text, not executed or formatted as prose. GFM provides inline code formatting and multi-line code blocks, with optional syntax highlighting.
 
@@ -459,9 +487,13 @@ For most solopreneurs, **Mermaid diagrams** are a standout feature – you can c
 
 </details>
 
+<details>
+ 
+<summary>
+ 
 ### Horizontal Rules (Section Breaks)
 
-<details>
+</summary>
 
 A horizontal rule is a simple line break across the page, useful for separating sections or thematic breaks. In Markdown, you can create one by placing **three or more** hyphens, asterisks, or underscores on a line by themselves:
 
@@ -493,9 +525,13 @@ Horizontal lines are great for readability in longer documents (like release not
 
 </details>
 
+<details>
+ 
+<summary>
+
 ### Links and Images
 
-<details>
+</summary>
  
 Links and images in Markdown use a similar syntax, with one key difference: links produce clickable text, while images produce the actual image embedded.
 
@@ -605,9 +641,13 @@ On GitHub, images will be displayed at their native size or constrained by CSS t
 
 </details>
 
+<details>
+ 
+<summary>
+
 ### Tables
 
-<details>
+</summary>
 
 Tables allow you to present data in rows and columns. GitHub Flavored Markdown supports table syntax, which is an extension to basic Markdown.
 
@@ -678,18 +718,21 @@ Despite these limitations, tables are extremely useful for structured informatio
 
 </details>
 
+
+
 ---
 
 ## Extended GitHub Markdown Features
 
 GitHub Flavored Markdown offers some **extended features and integrations** beyond basic Markdown. These can help you add interactivity or enriched content to your documentation. Below are some of these advanced tricks:
 
-
-
+<details>
+ 
+<summary>
 
 ### Emojis
 
-<details>
+</summary>
  
 GitHub supports a vast array of emojis via shortcodes. You might have seen people writing things like `:smile:` or `:rocket:` in issues – those get converted to actual emoji characters or images.
 
@@ -727,9 +770,13 @@ You can also just use actual Unicode emoji characters (e.g., copy-paste from an 
 
 </details>
 
+<details>
+ 
+<summary>
+ 
 ### Mentions and References (in detail)
 
-<details>
+</summary>
 
 We touched on this under links, but here’s a bit more context for **GitHub-specific mentions and references**:
 
@@ -742,9 +789,13 @@ These shortcuts save time and keep discussions interconnected. They are part of 
 
 </details>
 
+<details>
+ 
+<summary>
+
 ### Collapsible Sections (Details/Summary)
 
-<details>
+</summary>
 
 Sometimes your document might have large sections that are optional or details that not everyone needs to see by default. GitHub allows the use of the HTML `<details>` and `<summary>` elements to create a collapsible section (like a dropdown or accordion effect).
 
@@ -777,9 +828,13 @@ This is technically HTML, but it’s a very useful extension that many people us
 
 </details>
 
+<details>
+ 
+<summary>
+
 ### Alerts (Admonition Blocks)
 
-<details>
+</summary>
  
 GitHub has a special markdown extension for “alerts” or “admonitions” – colored callout boxes for highlighting information like notes, tips, warnings, etc. This is similar to what you might have seen in docs or static site generators.
 
@@ -839,9 +894,13 @@ Using alert boxes can make your README or documentation friendlier by drawing at
 
 </details>
 
+<details>
+ 
+<summary>
+ 
 ### Footnotes
 
-<details>
+</summary>
  
 Footnotes allow you to add references or asides without cluttering the main text. They appear as superscript numbers in the text, which link to the full note at the bottom of the page. GFM now supports footnotes in all Markdown files (except in GitHub Wikis).
 
@@ -881,9 +940,13 @@ The rendered footnote will combine those lines into one continuous note. (The tw
 
 </details>
 
+<details>
+ 
+<summary>
+ 
 ### Escaping and Literal Characters
 
-<details>
+</summary>
 
 Sometimes you want to write Markdown syntax characters literally, without them turning into formatting. For instance, you might want to show an asterisk `*` or a backtick `` ` `` in your content.
 
@@ -920,9 +983,13 @@ If you find that some text is unexpectedly bold or a link, check for unintention
 In general, if something is getting formatted and you don’t want it to, try escaping or using a code span to isolate it.
 </details>
 
+<details>
+ 
+<summary>
+
 ### Comments (Hiding Content)
 
-<details>
+</summary>
  
 You can include comments in your Markdown that will **not** appear in the rendered output. This is handy for leaving notes to yourself or collaborators within the raw text.
 
@@ -947,9 +1014,13 @@ Just be careful: **comments are still visible in the raw Markdown** (e.g., if so
 
 </details>
 
+<details>
+ 
+<summary>
+
 ### Differences by GitHub Context
 
-<details>
+</summary>
  
 By now, we’ve highlighted a few differences in how Markdown behaves depending on where it’s used. Here’s a quick summary:
 
@@ -969,10 +1040,13 @@ By now, we’ve highlighted a few differences in how Markdown behaves depending 
 
 To wrap up, here are some general guidelines for writing effective Markdown on GitHub:
 
-
+<details>
+ 
+<summary>
+ 
 ### Do’s ✔️
 
-<details>
+</summary>
 
 * **Do structure your documents with headings and lists.** This makes them easy to navigate. Use a Table of Contents if the document is very long (you can manually create one by listing links to the sections).
 * **Do use consistent formatting.** For example, if you choose `-` for bullets, use it throughout a document. If you use sentence case for headings, keep that style.
@@ -986,9 +1060,13 @@ To wrap up, here are some general guidelines for writing effective Markdown on G
 
 </details>
 
+<details>
+ 
+<summary>
+
 ### Don’ts ❌
 
-<details>
+</summary>
 
 * **Don’t overuse emphasis.** If everything is **bold** or *italic*, nothing stands out. Use them sparingly for keywords or important points.
 * **Don’t use HTML/CSS for big styling changes.** GitHub strips most styling for security and consistency. For example, you cannot add custom CSS classes or `<style>` tags. And if you attempt things like `<font color="red">`, it won’t work. Stick to the allowed HTML elements (we covered many: <ins>, <sub>, etc.) and accept that GitHub’s style is fixed.
@@ -1001,9 +1079,13 @@ To wrap up, here are some general guidelines for writing effective Markdown on G
 
 </details>
 
+<details>
+ 
+<summary>
+
 ### Troubleshooting Formatting Issues
 
-<details>
+</summary>
 
 Even experienced Markdown users hit snags. Here are some common problems and how to fix them:
 
