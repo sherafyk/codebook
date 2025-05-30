@@ -107,3 +107,17 @@ ul, ol {
   border-left-color: #58a6ff;
 }
 
+/*Change look of editable span fields for copying and pasting subjective form data*/
+.field span[contenteditable="true"] {
+  background-color: rgba(255, 255, 255, 0.1); /* very light transparent white bg */
+  color: rgba(255, 255, 255, 0.85); /* slightly dimmed white text */
+  padding: 4px 6px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.field span[contenteditable="true"]:focus {
+  background-color: rgba(255, 255, 255, 0.15); /* a bit brighter when focused */
+  outline: none;
+}
+
