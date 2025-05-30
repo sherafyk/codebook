@@ -18,72 +18,85 @@ You can edit the fields with custom values. Triple click each cell to replace th
 
 #### **System Environment & Infrastructure**
 
-  <div class="field"><b>Operating System:</b> <span contenteditable="true">e.g., Debian 12, Ubuntu 22.04, Windows 11</span></div>
-  <div class="field"><b>Web Server:</b> <span contenteditable="true">e.g., Apache 2.4, Nginx 1.18, IIS</span></div>
-  <div class="field"><b>Control Panel:</b> <span contenteditable="true">e.g., ISPConfig, cPanel, Plesk, or none</span></div>
-  <div class="field"><b>Domain/URL:</b> <span contenteditable="true">your-domain.com</span></div>
-  <div class="field"><b>Document/Web Root:</b> <span contenteditable="true">e.g., /var/www/clients/client0/web1/web/</span></div>
-  <div class="field"><b>Project Root:</b> <span contenteditable="true">e.g., /var/www/clients/client0/web1/project/</span></div>
-  <div class="field"><b>Database:</b> <span contenteditable="true">MySQL 8.0, PostgreSQL 14, SQLite, etc.</span></div>
-  <div class="field"><b>Runtime Environment:</b> <span contenteditable="true">Node.js v18, Python 3.11, PHP 8.2, etc.</span></div>
+  <div class="section">
+    <div class="field"><b>Operating System:</b> <span contenteditable="true">e.g., Debian 12, Ubuntu 22.04, Windows 11</span></div>
+    <div class="field"><b>Web Server:</b> <span contenteditable="true">e.g., Apache 2.4, Nginx 1.18, IIS</span></div>
+    <div class="field"><b>Control Panel:</b> <span contenteditable="true">e.g., ISPConfig, cPanel, Plesk, or none</span></div>
+    <div class="field"><b>Domain/URL:</b> <span contenteditable="true">your-domain.com</span></div>
+    <div class="field"><b>Document/Web Root:</b> <span contenteditable="true">e.g., /var/www/clients/client0/web1/web/</span></div>
+    <div class="field"><b>Project Root:</b> <span contenteditable="true">e.g., /var/www/clients/client0/web1/project/</span></div>
+    <div class="field"><b>Database:</b> <span contenteditable="true">MySQL 8.0, PostgreSQL 14, SQLite, etc.</span></div>
+    <div class="field"><b>Runtime Environment:</b> <span contenteditable="true">Node.js v18, Python 3.11, PHP 8.2, etc.</span></div>
+  </div>
 
 #### **Current Project Architecture**
 
-* **Framework/CMS:** `e.g., Strapi, WordPress, Laravel, Express.js`
-* **Frontend Technology:** `React, Vue, vanilla JS, static HTML`
-* **Backend Location:** `full path if separate from web root`
-* **API Endpoints:** `existing API structure/routes`
-* **Build Tools:** `webpack, Vite, npm scripts, etc.`
-* **Process Management:** `PM2, systemd, supervisor, etc.`
+  <div class="section">
+    <div class="field"><b>Framework/CMS:</b> <span contenteditable="true">e.g., Strapi, WordPress, Laravel, Express.js</span></div>
+    <div class="field"><b>Frontend Technology:</b> <span contenteditable="true">React, Vue, vanilla JS, static HTML</span></div>
+    <div class="field"><b>Backend Location:</b> <span contenteditable="true">Full path if separate from web root</span></div>
+    <div class="field"><b>API Endpoints:</b> <span contenteditable="true" class="multiline">Existing API structure/routes</span></div>
+    <div class="field"><b>Build Tools:</b> <span contenteditable="true">webpack, Vite, npm scripts, etc.</span></div>
+    <div class="field"><b>Process Management:</b> <span contenteditable="true">PM2, systemd, supervisor, etc.</span></div>
+  </div>
 
 #### **Network & Security Configuration**
 
-* **SSL/HTTPS Status:** `configured/not configured`
-* **Proxy Configuration:** `existing Apache/Nginx proxy rules`
-* **Firewall/Ports:** `relevant open ports and restrictions`
-* **Authentication:** `JWT, sessions, OAuth, etc.`
+  <div class="section">
+    <div class="field"><b>SSL/HTTPS Status:</b> <span contenteditable="true">configured/not configured</span></div>
+    <div class="field"><b>Proxy Configuration:</b> <span contenteditable="true" class="multiline">Existing Apache/Nginx proxy rules</span></div>
+    <div class="field"><b>Firewall/Ports:</b> <span contenteditable="true" class="multiline">Relevant open ports and restrictions</span></div>
+    <div class="field"><b>Authentication:</b> <span contenteditable="true">JWT, sessions, OAuth, etc.</span></div>
+  </div>
 
 #### **Current State & Working Components**
 
-* **What's Currently Working:** `list functional features`
-* **What's in Web Directory:** `current contents of document root`
-* **Existing Configuration Files:** `relevant config files and their locations`
-* **Dependencies Installed:** `key packages, versions`
-* **Permission Structure:** `user/group ownership, any permission constraints`
+  <div class="section">
+    <div class="field"><b>What's Currently Working:</b> <span contenteditable="true" class="multiline big">List functional features</span></div>
+    <div class="field"><b>What's in Web Directory:</b> <span contenteditable="true" class="multiline big">Current contents of document root</span></div>
+    <div class="field"><b>Existing Configuration Files:</b> <span contenteditable="true" class="multiline big">Relevant config files and their locations</span></div>
+    <div class="field"><b>Dependencies Installed:</b> <span contenteditable="true" class="multiline big">Key packages, versions</span></div>
+    <div class="field"><b>Permission Structure:</b> <span contenteditable="true" class="multiline big">User/group ownership, any permission constraints</span></div>
+  </div>
 
 #### **Project Goals & Requirements**
 
-* **Primary Objective:** `what you're trying to accomplish`
-* **Specific Features Needed:** `detailed feature requirements`
-* **URL Structure Plan:** `how you want routes organized`
-* **Performance Requirements:** `any speed/optimization needs`
-* **Integration Points:** `APIs, third-party services, etc.`
+  <div class="section">
+    <div class="field"><b>Primary Objective:</b> <span contenteditable="true" class="multiline big">What you're trying to accomplish</span></div>
+    <div class="field"><b>Specific Features Needed:</b> <span contenteditable="true" class="multiline big">Detailed feature requirements</span></div>
+    <div class="field"><b>URL Structure Plan:</b> <span contenteditable="true" class="multiline">How you want routes organized</span></div>
+    <div class="field"><b>Performance Requirements:</b> <span contenteditable="true" class="multiline">Any speed/optimization needs</span></div>
+    <div class="field"><b>Integration Points:</b> <span contenteditable="true" class="multiline">APIs, third-party services, etc.</span></div>
+  </div>
 
 #### **Known Constraints & Preferences**
-
-* **ISP/Hosting Limitations:** `shared hosting restrictions, etc.`
-* **Technology Preferences:** `preferred libraries, patterns, etc.`
-* **Compatibility Requirements:** `browser support, mobile, etc.`
-* **Deployment Constraints:** `CI/CD, manual deployment, etc.`
+  <div class="section">
+    <div class="field"><b>ISP/Hosting Limitations:</b> <span contenteditable="true" class="multiline">Shared hosting restrictions, etc.</span></div>
+    <div class="field"><b>Technology Preferences:</b> <span contenteditable="true" class="multiline">Preferred libraries, patterns, etc.</span></div>
+    <div class="field"><b>Compatibility Requirements:</b> <span contenteditable="true" class="multiline">Browser support, mobile, etc.</span></div>
+    <div class="field"><b>Deployment Constraints:</b> <span contenteditable="true" class="multiline">CI/CD, manual deployment, etc.</span></div>
+  </div>
 
 #### **Development Context**
 
-* **Development Stage:** `initial setup, mid-development, production ready`
-* **Team Size:** `solo, small team, etc.`
-* **Maintenance Requirements:** `long-term maintainability needs`
-* **Documentation Needs:** `level of commenting/docs required`
+  <div class="section">
+    <div class="field"><b>Development Stage:</b> <span contenteditable="true">Initial setup, mid-development, production ready</span></div>
+    <div class="field"><b>Team Size:</b> <span contenteditable="true">Solo, small team, etc.</span></div>
+    <div class="field"><b>Maintenance Requirements:</b> <span contenteditable="true" class="multiline">Long-term maintainability needs</span></div>
+    <div class="field"><b>Documentation Needs:</b> <span contenteditable="true" class="multiline">Level of commenting/docs required</span></div>
+  </div>
   
 ---
 
-**REQUEST:** Based on this context, I need help with
+#### REQUEST:
 
-```
-[specific
-        coding
-              task]
-```
-
-To ensure the code works flawlessly on first implementation, please ask me any clarifying questions about missing details, assumptions, or specifics about my setup that could affect the solution. I want to avoid generic examples and ensure the code accounts for my exact environment and constraints.
+  <div class="section">
+    <div class="field"><b>Based on this context, I need help with:</b> <span contenteditable="true">Describe your specific coding task or question here</span></div>
+  </div>
+<br>
+  <div class="section">
+    To ensure the code works flawlessly on first implementation, please ask me any clarifying questions about missing details, assumptions, or specifics about my setup that could affect the solution. I want to avoid generic examples and ensure the code accounts for my exact environment and constraints.
+  </div>
 
 
 
