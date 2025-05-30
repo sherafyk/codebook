@@ -1,7 +1,7 @@
 /* github-markdown.css */
 
 /* Import core GitHub Markdown styles */
-@import url('https://github.com/sindresorhus/github-markdown-css/blob/main/github-markdown.css');
+@import url('https://raw.githubusercontent.com/sindresorhus/github-markdown-css/refs/heads/main/github-markdown.css');
 
 /* Force Dark Mode Appearance */
 /*
