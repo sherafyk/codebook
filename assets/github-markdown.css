@@ -111,7 +111,7 @@ ul, ol {
 .field span[contenteditable="true"] {
   background-color: rgba(255, 255, 255, 0.1); /* very light transparent white bg */
   color: rgba(255, 255, 255, 0.85); /* slightly dimmed white text */
-  padding: 1px 1px;
+  padding: 0px 3px;
   border-radius: 3px;
   transition: background-color 0.2s ease;
 }
