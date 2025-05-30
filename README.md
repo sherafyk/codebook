@@ -13,13 +13,18 @@ A growing archive of code snippets, automations, and guides — powered by AI an
 
 ## Bash Commands
 
-### Delete files recursively
+#### Delete files recursively
 ```bash
 rm -rf /path/to/dir
 ```
 > [!NOTE]
 > `-r`: Recursive (includes subdirectories)  
 > `-f`: Force (no prompt)
+
+> [!CAUTION]
+> 'This can end real bad...' Triple check the path is correct.
+
+<br>
 
 ### SSH and Server Access
 
@@ -41,7 +46,8 @@ ssh -i /path/to/private_key username@your-server-ip
 * **Purpose**: Use SSH key-based login.
 * **Notes**: Safer than password logins. Always keep private keys secure.
 
----
+
+<br>
 
 ### System Updates & Package Management
 
@@ -49,9 +55,10 @@ ssh -i /path/to/private_key username@your-server-ip
 
 ```bash
 sudo apt update && sudo apt upgrade -y
-```
+````
 
 * **Purpose**: Regular maintenance updates for VPS servers.
+* **Context**: Always run before major deployments, software installs, or server optimizations.
 
 #### Clean Up Unnecessary Packages
 
@@ -60,6 +67,122 @@ sudo apt autoremove -y
 ```
 
 * **Purpose**: Free up disk space after package updates.
+* **Context**: Housekeeping after major package upgrades or PHP version changes.
+
+#### Full Distribution Upgrade
+
+```bash
+sudo apt full-upgrade -y
+```
+
+* **Purpose**: Apply more aggressive upgrades that may include kernel and core package changes.
+* **Context**: Occasionally used after major Ubuntu/Debian point releases. Use with caution on production servers.
+
+#### Upgrade to Latest Distribution Release (Advanced)
+
+```bash
+sudo do-release-upgrade
+```
+
+* **Purpose**: Upgrade to the next Ubuntu/Debian release version.
+* **Caution**: Only use after backups, testing, and compatibility checks.
+
+#### Check Current OS Version
+
+```bash
+lsb_release -a
+```
+
+* **Purpose**: Confirm exact OS version for troubleshooting or compatibility checks.
+
+#### Check Kernel Version
+
+```bash
+uname -r
+```
+
+* **Purpose**: Verify running kernel version after updates.
+
+#### Search for Package
+
+```bash
+apt search packagename
+```
+
+* **Purpose**: Find installable package names before installing.
+
+#### Install Specific Package
+
+```bash
+sudo apt install package-name
+```
+
+* **Purpose**: Install any system tool, utility, or dependency.
+* **Example**: Install PHP extensions, certbot, mysql-client, python3-pip, etc.
+
+#### Reinstall Package (If Broken)
+
+```bash
+sudo apt install --reinstall package-name
+```
+
+* **Purpose**: Repair corrupted packages without removing configuration files.
+
+#### Remove Unused Package
+
+```bash
+sudo apt remove package-name
+```
+
+* **Purpose**: Clean up unneeded packages after decommissioning features.
+
+#### Completely Purge Package
+
+```bash
+sudo apt purge package-name
+```
+
+* **Purpose**: Fully remove package and associated config files.
+
+#### Clean Out Local Package Cache
+
+```bash
+sudo apt clean
+```
+
+* **Purpose**: Remove all cached package files to free up disk space.
+
+#### Fix Broken Package Dependencies
+
+```bash
+sudo apt --fix-broken install
+```
+
+* **Purpose**: Auto-resolve broken dependencies after interrupted installs.
+
+#### List All Installed Packages
+
+```bash
+dpkg --get-selections
+```
+
+* **Purpose**: Full inventory of installed packages (helpful for server migrations or audit logs).
+
+#### List Recently Installed Packages
+
+```bash
+grep "install " /var/log/dpkg.log
+```
+
+* **Purpose**: See package changes for recent activity (helps in debugging issues after updates).
+
+#### Show Package Info
+
+```bash
+apt show package-name
+```
+
+* **Purpose**: Display detailed info including version, dependencies, maintainers, etc.
 
 ---
 
