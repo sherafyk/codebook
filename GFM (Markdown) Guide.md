@@ -1,6 +1,6 @@
 # GitHub Flavored Markdown (GFM) – Comprehensive Guide for Solopreneurs
 **Updated:** 2025-May-29 @1733  
-**By:** Sherafgan Khan [@sherafyk]([https://github.com](https://github.com/sherafyk))  
+**By:** Sherafgan Khan [(@sherafyk)](https://github.com/sherafyk)
 
 **GitHub Flavored Markdown (GFM)** is a lightweight markup language for formatting text on GitHub. It builds on standard Markdown with **extended features** that make it easy to style your content in README files, issues, pull requests, comments, and more. This guide provides a **comprehensive, intuitive reference** for GFM, targeted at technically literate solopreneurs (even if you’re not an expert developer). Use it as a go-to resource for formatting text on GitHub.
 
