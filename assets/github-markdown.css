@@ -1251,8 +1251,8 @@ html {
 
 /*Change look of editable span fields for copying and pasting subjective form data*/
 .field span[contenteditable="true"] {
-  background-color: rgba(255, 255, 255, 0.1); /* very light transparent white bg */
-  color: rgba(255, 255, 255, 0.85); /* slightly dimmed white text */
+  background-color: #1e223c; /* opaque corn blue */
+  color: #d8c094; /* Tan */
   padding: 0px 3px;
   border-radius: 3px;
   transition: background-color 0.2s ease;
@@ -1261,7 +1261,7 @@ html {
 }
 
 .field span[contenteditable="true"]:focus {
-  background-color: rgba(255, 255, 255, 0.15); /* a bit brighter when focused */
+  background-color: #1e223ccc /* a bit brighter when focused */
   outline: none;
   font-size: 14px;
   font-family: monospace;
