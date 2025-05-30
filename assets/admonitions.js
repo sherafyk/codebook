@@ -2,7 +2,7 @@ document.querySelectorAll('.markdown-body blockquote').forEach(blockquote => {
   const text = blockquote.textContent.trim();
   if (text.startsWith('[!NOTE]')) {
     blockquote.classList.add('admonition', 'note');
-    blockquote.innerHTML = blockquote.innerHTML.replace('[!NOTE]', ':information_source:');
+    blockquote.innerHTML = blockquote.innerHTML.replace('[!NOTE]', 'ℹ️<br>');
   }
   if (text.startsWith('[!WARNING]')) {
     blockquote.classList.add('admonition', 'warning');
@@ -13,3 +13,5 @@ document.querySelectorAll('.markdown-body blockquote').forEach(blockquote => {
     blockquote.innerHTML = blockquote.innerHTML.replace('[!TIP]', '');
   }
 });
+
+//fg
