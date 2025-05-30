@@ -22,7 +22,11 @@ rm -rf /path/to/dir
 > `-f`: Force (no prompt)
 
 > [!CAUTION]
-> 'This can end real bad...' Triple check the path is correct.
+> 'This can end real bad...' Triple check the path is correct.  
+
+> {% octicon alert height:20 %} **Warning:**  
+> Don’t run this code in production!
+
 
 <br>
 
