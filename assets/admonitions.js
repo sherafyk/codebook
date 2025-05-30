@@ -2,7 +2,7 @@ document.querySelectorAll('.markdown-body blockquote').forEach(blockquote => {
   const text = blockquote.textContent.trim();
   if (text.startsWith('[!NOTE]')) {
     blockquote.classList.add('admonition', 'note');
-    blockquote.innerHTML = blockquote.innerHTML.replace('[!NOTE]', 'ℹⓘ Note<br>');
+    blockquote.innerHTML = blockquote.innerHTML.replace('[!NOTE]', 'ⓘ Note<br>');
   }
   if (text.startsWith('[!WARNING]')) {
     blockquote.classList.add('admonition', 'warning');
