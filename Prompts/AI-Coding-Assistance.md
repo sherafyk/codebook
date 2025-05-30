@@ -10,7 +10,7 @@ This template ensures the LLM has comprehensive context and prompts it to ask fo
 > - Include any unique aspects of your setup that differ from standard installations
 > - The final request explicitly asks the LLM to probe for missing context
 > - Adapt sections based on your project type (web app, API, desktop app, etc.)
-> - Edit each field inline (yes you can type directly if viewing on 'code.sherafy.com' and not github)
+> - **Edit each field inline (yes you can type directly if viewing on 'code.sherafy.com' and not github)**
 > - Copy and paste to your LLM. Your answers will be in line, with labels and answers together
 > - For multiline answers, just type and use Shift+Enter for line breaks if needed
 > - Don't refresh this page if typing in values or you will be sad.
