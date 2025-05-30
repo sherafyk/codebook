@@ -11,8 +11,13 @@
   --base-text-weight-semibold: 600;
   --fontStack-monospace: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
   --fgColor-accent: Highlight;
+  --box-sizing: border-box;
+  --min-width: 200px;
+  --max-width: 1000px;
+  --margin: 0 auto;
+  --padding: 45px;
 }
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark ) {
   .markdown-body, [data-theme="dark"] {
     /* dark */
     color-scheme: dark;
