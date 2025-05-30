@@ -14,7 +14,7 @@ permalink: /
     <!-- 2. Wrap in markdown-body for GitHub styling -->
     <article class="markdown-body">
       {% capture md %}{% include_relative README.md %}{% endcapture %}
-
+      {{ md | markdownify }}
     </article>
   </body>
 
