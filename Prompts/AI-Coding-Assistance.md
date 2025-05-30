@@ -12,7 +12,7 @@ This template ensures the LLM has comprehensive context and prompts it to ask fo
 > - Adapt sections based on your project type (web app, API, desktop app, etc.)
 
 ### Copy below this line, edit, and pass to LLM.
-[Use the editable HTML template to quickly add custom values and copy.](https://codebook.sherafy.com/AI-Coding-Assistance.html)
+You can edit the fields with custom values. Triple click each cell to replace the text with your own.
 
 ---
 
