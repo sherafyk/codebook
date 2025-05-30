@@ -15,6 +15,8 @@ Let’s dive in!
 ---
 
 ## 📚 Contents
+<details>
+<summary>Click here to view</summary>
 
 * [Introduction to GFM](#introduction-to-gfm)
 * [Markdown Basics on GitHub](#markdown-basics-on-github)
@@ -50,9 +52,11 @@ Let’s dive in!
   * [Do’s ✔️](#dos-️)
   * [Don’ts ❌](#donts-)
   * [Troubleshooting Formatting Issues](#troubleshooting-formatting-issues)
+  
+</details>
 
 ---
----
+
 ## Introduction to GFM
 
 Markdown is a plain text formatting syntax that converts easily to HTML. GitHub supports Markdown in many places, and their “flavored” version adds extra capabilities. As a solopreneur, you’ll encounter GFM when you:
@@ -72,6 +76,8 @@ Markdown is a plain text formatting syntax that converts easily to HTML. GitHub 
 Let’s start with core Markdown syntax that works on GitHub. These basics cover 90% of typical formatting needs.
 
 ### Headings
+
+<details>
 
 Headings help structure your content with different levels (like chapters, sections, sub-sections). In Markdown, you create a heading by prefixing your text with one or more `#` symbols:
 
@@ -102,8 +108,11 @@ This would render as a hierarchy of headings. The number of `#` determines the h
 
 > **Tip:** To find a heading’s anchor on GitHub, hover over the rendered heading and click the link icon that appears. This copies or reveals the URL fragment you can use in links.
 
-### Paragraphs and Line Breaks
+</details>
 
+### Paragraphs and Line Breaks
+<details>
+ 
 **Paragraphs:** In Markdown, a new paragraph is created by leaving a blank line between lines of text. Simply continue text on the next line (with no blank line) to keep it in the **same paragraph**, or add an empty line to start a **new paragraph**. Paragraph text will wrap automatically in the rendered view.
 
 **Line breaks:** What if you want a new line *without* starting a new paragraph (e.g. for an address or poem)?
@@ -125,6 +134,8 @@ The two trailing spaces (`␣␣`) ensure that “This will appear on a new line
 * Many text editors trim trailing whitespace by default. If you’re relying on spaces for a line break, be careful—those spaces might be removed on save. In such cases, using an explicit `<br>` is safer.
 * Do not use multiple `<br>` tags for extra blank lines. Instead, add a completely blank line to separate paragraphs (which creates a blank line in output).
 * In lists or other contexts, if you need a line break *within* a list item, you can use the same technique (a double space or `<br>` at the end of a line in the list). Ensure the next line is indented properly (see **Lists** below for indentation rules).
+
+</details>
 
 ### Emphasis and Text Styles
 
