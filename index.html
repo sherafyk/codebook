@@ -1,0 +1,21 @@
+---
+layout: null
+permalink: /
+---
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 1. Official GitHub Markdown CSS -->
+    <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/github-markdown-css@5.8.1/github-markdown.min.css">
+  </head>
+  <body>
+    <!-- 2. Wrap in markdown-body for GitHub styling -->
+    <article class="markdown-body">
+      {% capture md %}{% include_relative README.md %}{% endcapture %}
+      {{ md | markdownify }}
+    </article>
+  </body>
+</html>
