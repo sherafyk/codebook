@@ -18,9 +18,9 @@ A growing archive of code snippets, automations, and guides — powered by AI an
 rm -rf /path/to/dir
 ```
 > [!NOTE]
-> `-r`: Recursive (includes subdirectories)
+> `-r`: Recursive (includes subdirectories)  
 > `-f`: Force (no prompt)
-> 
+
 <br>
 
 ## ISPConfig Tips
