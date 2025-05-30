@@ -88,12 +88,22 @@ ul, ol {
 }
 
 /* Simple Admonition Styling for [!NOTE] etc */
-.markdown-body blockquote:has(strong:contains("[!NOTE]")),
-.markdown-body blockquote:has(strong:contains("[!INFO]")),
-.markdown-body blockquote:has(strong:contains("[!WARNING]")),
-.markdown-body blockquote:has(strong:contains("[!TIP]")) {
+.admonition {
+  padding: 1em;
   border-left: 4px solid #58a6ff;
   background-color: #161b22;
-  padding: 1em;
   border-radius: 6px;
 }
+
+.admonition.warning {
+  border-left-color: #f85149;
+}
+
+.admonition.tip {
+  border-left-color: #3fb950;
+}
+
+.admonition.note {
+  border-left-color: #58a6ff;
+}
+
