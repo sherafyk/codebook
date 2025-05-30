@@ -1,10 +1,10 @@
 /* github-markdown.css */
 
 /* Import core GitHub Markdown styles */
-@import url('https://cdn.jsdelivr.net/npm/github-markdown-css@5.8.1/github-markdown.min.css');
+@import url('https://github.com/sindresorhus/github-markdown-css/blob/main/github-markdown-dark.css');
 
 /* Force Dark Mode Appearance */
-
+/*
 body {
   background-color: #0d1117;
   color: #c9d1d9;
@@ -87,7 +87,7 @@ ul, ol {
   padding-left: 2em;
 }
 
-/* Simple Admonition Styling for [!NOTE] etc */
+/* Simple Admonition Styling for [!NOTE] etc
 .admonition {
   padding: 15px;
   border-left: 5px solid #58a6ff;
@@ -106,6 +106,8 @@ ul, ol {
 .admonition.note {
   border-left-color: #58a6ff;
 }
+
+
 
 /*Change look of editable span fields for copying and pasting subjective form data*/
 .field span[contenteditable="true"] {
