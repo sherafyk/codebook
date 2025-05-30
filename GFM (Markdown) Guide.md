@@ -11,39 +11,33 @@
 
 Let’s dive in!
 
-Absolutely! Here’s a **GitHub Flavored Markdown (GFM) Table of Contents** (ToC) you can copy-paste at the top of your guide. This uses anchor links that work in GitHub’s README and Markdown rendering. (Double-check section titles in your final version; adjust anchor IDs if needed.)
-
+---
 ---
 
-## 📚 Table of Contents
+## 📚 Contents
 
 * [Introduction to GFM](#introduction-to-gfm)
 * [Markdown Basics on GitHub](#markdown-basics-on-github)
-
   * [Headings](#headings)
   * [Paragraphs and Line Breaks](#paragraphs-and-line-breaks)
   * [Emphasis and Text Styles](#emphasis-and-text-styles)
   * [Blockquotes](#blockquotes)
   * [Lists](#lists)
-
     * [Unordered Lists (Bulleted)](#unordered-lists-bulleted)
     * [Ordered Lists (Numbered)](#ordered-lists-numbered)
     * [Nested Lists](#nested-lists)
     * [Task Lists (Checklists)](#task-lists-checklists)
   * [Code and Syntax Highlighting](#code-and-syntax-highlighting)
-
     * [Inline Code](#inline-code)
     * [Code Blocks](#code-blocks)
     * [Displaying Output or Logs](#displaying-output-or-logs)
     * [Diagrams and Other Media in Code Blocks](#diagrams-and-other-media-in-code-blocks)
   * [Horizontal Rules (Section Breaks)](#horizontal-rules-section-breaks)
   * [Links and Images](#links-and-images)
-
     * [Links (Hyperlinks)](#links-hyperlinks)
     * [Images](#images)
   * [Tables](#tables)
 * [Extended GitHub Markdown Features](#extended-github-markdown-features)
-
   * [Emojis](#emojis)
   * [Mentions and References (in detail)](#mentions-and-references-in-detail)
   * [Collapsible Sections (Details/Summary)](#collapsible-sections-detailssummary)
@@ -53,13 +47,12 @@ Absolutely! Here’s a **GitHub Flavored Markdown (GFM) Table of Contents** (ToC
   * [Comments (Hiding Content)](#comments-hiding-content)
 * [Differences by GitHub Context](#differences-by-github-context)
 * [General Tips, Do’s and Don’ts](#general-tips-dos-and-donts)
-
   * [Do’s ✔️](#dos-️)
   * [Don’ts ❌](#donts-)
   * [Troubleshooting Formatting Issues](#troubleshooting-formatting-issues)
 
 ---
-
+---
 ## Introduction to GFM
 
 Markdown is a plain text formatting syntax that converts easily to HTML. GitHub supports Markdown in many places, and their “flavored” version adds extra capabilities. As a solopreneur, you’ll encounter GFM when you:
