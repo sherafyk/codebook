@@ -17,6 +17,7 @@ A growing archive of code snippets, automations, and guides — powered by AI an
 ```bash
 rm -rf /path/to/dir
 ```
+> [!NOTE]
 > `-r`: Recursive (includes subdirectories)
 > `-f`: Force (no prompt)
 
