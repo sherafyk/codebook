@@ -5,17 +5,25 @@
   <title>Coding Project Context Template</title>
   <style>
     body { font-family: sans-serif; margin: 2em; background: #f6f7fa; color: #222; }
-    h1, h2 { margin-top: 1.2em; }
-    .section { background: #fff; border-radius: 7px; box-shadow: 0 2px 8px #0001; margin-bottom: 2em; padding: 1.2em; }
-    label { display: block; margin-top: 1em; font-weight: 600; }
-    input[type="text"], textarea {
-      width: 100%; padding: 0.4em; border: 1px solid #ccd; border-radius: 4px;
-      margin-top: 0.2em; box-sizing: border-box; font-size: 1em; background: #f9f9fc;
-    }
-    textarea { min-height: 2.2em; }
-    textarea.big { min-height: 4em; }
+    h1 { margin-top: 1.2em; }
+    h2 { margin: 1.6em 0 1em 0; font-size: 1.15em; color: #184D79; }
+    .section { background: #fff; border-radius: 7px; box-shadow: 0 2px 8px #0001; margin-bottom: 2em; padding: 1.3em 1.5em; }
     .tip { background: #e7f4fa; border-left: 4px solid #2ba4dc; padding: 0.8em; margin-bottom: 1.4em; border-radius: 5px; }
     .copy-area { background: #f3f6fc; border: 1px dashed #b5c3db; padding: 0.7em; margin-top: 1.5em; border-radius: 5px; }
+    .row { margin: 0.7em 0; display: flex; align-items: flex-start; }
+    .row b { min-width: 230px; display: inline-block; }
+    input[type="text"] {
+      flex: 1 1 0; min-width: 200px; margin-left: 0.7em;
+      padding: 0.3em 0.5em; border: 1px solid #ccd; border-radius: 4px;
+      font-size: 1em; background: #f9f9fc;
+    }
+    textarea {
+      flex: 1 1 0; min-width: 200px; margin-left: 0.7em;
+      padding: 0.35em 0.5em; border: 1px solid #ccd; border-radius: 4px;
+      font-size: 1em; background: #f9f9fc; resize: vertical;
+      min-height: 2.1em;
+    }
+    textarea.big { min-height: 4em; }
   </style>
 </head>
 <body>
@@ -37,144 +45,77 @@
     <b>Copy below this line, edit, and pass to LLM.</b>
   </div>
 
-  <form>
-    <div class="section">
-      <h2>System Environment &amp; Infrastructure</h2>
-      <label>Operating System</label>
-      <input type="text" placeholder="e.g., Debian 12, Ubuntu 22.04, Windows 11">
+  <div class="section">
+    <h2>System Environment &amp; Infrastructure</h2>
+    <div class="row"><b>Operating System:</b><input type="text" placeholder="e.g., Debian 12, Ubuntu 22.04, Windows 11"></div>
+    <div class="row"><b>Web Server:</b><input type="text" placeholder="e.g., Apache 2.4, Nginx 1.18, IIS"></div>
+    <div class="row"><b>Control Panel:</b><input type="text" placeholder="e.g., ISPConfig, cPanel, Plesk, or none"></div>
+    <div class="row"><b>Domain/URL:</b><input type="text" placeholder="your-domain.com"></div>
+    <div class="row"><b>Document/Web Root:</b><input type="text" placeholder="e.g., /var/www/clients/client0/web1/web/"></div>
+    <div class="row"><b>Project Root:</b><input type="text" placeholder="e.g., /var/www/clients/client0/web1/project/"></div>
+    <div class="row"><b>Database:</b><input type="text" placeholder="MySQL 8.0, PostgreSQL 14, SQLite, etc."></div>
+    <div class="row"><b>Runtime Environment:</b><input type="text" placeholder="Node.js v18, Python 3.11, PHP 8.2, etc."></div>
+  </div>
 
-      <label>Web Server</label>
-      <input type="text" placeholder="e.g., Apache 2.4, Nginx 1.18, IIS">
+  <div class="section">
+    <h2>Current Project Architecture</h2>
+    <div class="row"><b>Framework/CMS:</b><input type="text" placeholder="e.g., Strapi, WordPress, Laravel, Express.js"></div>
+    <div class="row"><b>Frontend Technology:</b><input type="text" placeholder="React, Vue, vanilla JS, static HTML"></div>
+    <div class="row"><b>Backend Location:</b><input type="text" placeholder="Full path if separate from web root"></div>
+    <div class="row"><b>API Endpoints:</b><textarea placeholder="Existing API structure/routes"></textarea></div>
+    <div class="row"><b>Build Tools:</b><input type="text" placeholder="webpack, Vite, npm scripts, etc."></div>
+    <div class="row"><b>Process Management:</b><input type="text" placeholder="PM2, systemd, supervisor, etc."></div>
+  </div>
 
-      <label>Control Panel</label>
-      <input type="text" placeholder="e.g., ISPConfig, cPanel, Plesk, or none">
+  <div class="section">
+    <h2>Network &amp; Security Configuration</h2>
+    <div class="row"><b>SSL/HTTPS Status:</b><input type="text" placeholder="configured/not configured"></div>
+    <div class="row"><b>Proxy Configuration:</b><textarea placeholder="Existing Apache/Nginx proxy rules"></textarea></div>
+    <div class="row"><b>Firewall/Ports:</b><textarea placeholder="Relevant open ports and restrictions"></textarea></div>
+    <div class="row"><b>Authentication:</b><input type="text" placeholder="JWT, sessions, OAuth, etc."></div>
+  </div>
 
-      <label>Domain/URL</label>
-      <input type="text" placeholder="your-domain.com">
+  <div class="section">
+    <h2>Current State &amp; Working Components</h2>
+    <div class="row"><b>What's Currently Working:</b><textarea class="big" placeholder="List functional features"></textarea></div>
+    <div class="row"><b>What's in Web Directory:</b><textarea class="big" placeholder="Current contents of document root"></textarea></div>
+    <div class="row"><b>Existing Configuration Files:</b><textarea class="big" placeholder="Relevant config files and their locations"></textarea></div>
+    <div class="row"><b>Dependencies Installed:</b><textarea class="big" placeholder="Key packages, versions"></textarea></div>
+    <div class="row"><b>Permission Structure:</b><textarea class="big" placeholder="User/group ownership, any permission constraints"></textarea></div>
+  </div>
 
-      <label>Document/Web Root</label>
-      <input type="text" placeholder="e.g., /var/www/clients/client0/web1/web/">
+  <div class="section">
+    <h2>Project Goals &amp; Requirements</h2>
+    <div class="row"><b>Primary Objective:</b><textarea class="big" placeholder="What you're trying to accomplish"></textarea></div>
+    <div class="row"><b>Specific Features Needed:</b><textarea class="big" placeholder="Detailed feature requirements"></textarea></div>
+    <div class="row"><b>URL Structure Plan:</b><textarea placeholder="How you want routes organized"></textarea></div>
+    <div class="row"><b>Performance Requirements:</b><textarea placeholder="Any speed/optimization needs"></textarea></div>
+    <div class="row"><b>Integration Points:</b><textarea placeholder="APIs, third-party services, etc."></textarea></div>
+  </div>
 
-      <label>Project Root</label>
-      <input type="text" placeholder="e.g., /var/www/clients/client0/web1/project/">
+  <div class="section">
+    <h2>Known Constraints &amp; Preferences</h2>
+    <div class="row"><b>ISP/Hosting Limitations:</b><textarea placeholder="Shared hosting restrictions, etc."></textarea></div>
+    <div class="row"><b>Technology Preferences:</b><textarea placeholder="Preferred libraries, patterns, etc."></textarea></div>
+    <div class="row"><b>Compatibility Requirements:</b><textarea placeholder="Browser support, mobile, etc."></textarea></div>
+    <div class="row"><b>Deployment Constraints:</b><textarea placeholder="CI/CD, manual deployment, etc."></textarea></div>
+  </div>
 
-      <label>Database</label>
-      <input type="text" placeholder="MySQL 8.0, PostgreSQL 14, SQLite, etc.">
+  <div class="section">
+    <h2>Development Context</h2>
+    <div class="row"><b>Development Stage:</b><input type="text" placeholder="Initial setup, mid-development, production ready"></div>
+    <div class="row"><b>Team Size:</b><input type="text" placeholder="Solo, small team, etc."></div>
+    <div class="row"><b>Maintenance Requirements:</b><textarea placeholder="Long-term maintainability needs"></textarea></div>
+    <div class="row"><b>Documentation Needs:</b><textarea placeholder="Level of commenting/docs required"></textarea></div>
+  </div>
 
-      <label>Runtime Environment</label>
-      <input type="text" placeholder="Node.js v18, Python 3.11, PHP 8.2, etc.">
-    </div>
+  <div class="section">
+    <h2>REQUEST: Based on this context, I need help with</h2>
+    <div class="row"><b>[specific coding task]:</b><textarea class="big" placeholder="Describe your specific coding task or question here"></textarea></div>
+  </div>
 
-    <div class="section">
-      <h2>Current Project Architecture</h2>
-      <label>Framework/CMS</label>
-      <input type="text" placeholder="e.g., Strapi, WordPress, Laravel, Express.js">
-
-      <label>Frontend Technology</label>
-      <input type="text" placeholder="React, Vue, vanilla JS, static HTML">
-
-      <label>Backend Location</label>
-      <input type="text" placeholder="Full path if separate from web root">
-
-      <label>API Endpoints</label>
-      <textarea placeholder="Existing API structure/routes"></textarea>
-
-      <label>Build Tools</label>
-      <input type="text" placeholder="webpack, Vite, npm scripts, etc.">
-
-      <label>Process Management</label>
-      <input type="text" placeholder="PM2, systemd, supervisor, etc.">
-    </div>
-
-    <div class="section">
-      <h2>Network &amp; Security Configuration</h2>
-      <label>SSL/HTTPS Status</label>
-      <input type="text" placeholder="configured/not configured">
-
-      <label>Proxy Configuration</label>
-      <textarea placeholder="Existing Apache/Nginx proxy rules"></textarea>
-
-      <label>Firewall/Ports</label>
-      <textarea placeholder="Relevant open ports and restrictions"></textarea>
-
-      <label>Authentication</label>
-      <input type="text" placeholder="JWT, sessions, OAuth, etc.">
-    </div>
-
-    <div class="section">
-      <h2>Current State &amp; Working Components</h2>
-      <label>What's Currently Working</label>
-      <textarea placeholder="List functional features" class="big"></textarea>
-
-      <label>What's in Web Directory</label>
-      <textarea placeholder="Current contents of document root" class="big"></textarea>
-
-      <label>Existing Configuration Files</label>
-      <textarea placeholder="Relevant config files and their locations" class="big"></textarea>
-
-      <label>Dependencies Installed</label>
-      <textarea placeholder="Key packages, versions" class="big"></textarea>
-
-      <label>Permission Structure</label>
-      <textarea placeholder="User/group ownership, any permission constraints" class="big"></textarea>
-    </div>
-
-    <div class="section">
-      <h2>Project Goals &amp; Requirements</h2>
-      <label>Primary Objective</label>
-      <textarea placeholder="What you're trying to accomplish" class="big"></textarea>
-
-      <label>Specific Features Needed</label>
-      <textarea placeholder="Detailed feature requirements" class="big"></textarea>
-
-      <label>URL Structure Plan</label>
-      <textarea placeholder="How you want routes organized"></textarea>
-
-      <label>Performance Requirements</label>
-      <textarea placeholder="Any speed/optimization needs"></textarea>
-
-      <label>Integration Points</label>
-      <textarea placeholder="APIs, third-party services, etc."></textarea>
-    </div>
-
-    <div class="section">
-      <h2>Known Constraints &amp; Preferences</h2>
-      <label>ISP/Hosting Limitations</label>
-      <textarea placeholder="Shared hosting restrictions, etc."></textarea>
-
-      <label>Technology Preferences</label>
-      <textarea placeholder="Preferred libraries, patterns, etc."></textarea>
-
-      <label>Compatibility Requirements</label>
-      <textarea placeholder="Browser support, mobile, etc."></textarea>
-
-      <label>Deployment Constraints</label>
-      <textarea placeholder="CI/CD, manual deployment, etc."></textarea>
-    </div>
-
-    <div class="section">
-      <h2>Development Context</h2>
-      <label>Development Stage</label>
-      <input type="text" placeholder="Initial setup, mid-development, production ready">
-
-      <label>Team Size</label>
-      <input type="text" placeholder="Solo, small team, etc.">
-
-      <label>Maintenance Requirements</label>
-      <textarea placeholder="Long-term maintainability needs"></textarea>
-
-      <label>Documentation Needs</label>
-      <textarea placeholder="Level of commenting/docs required"></textarea>
-    </div>
-
-    <div class="section">
-      <h2>REQUEST: Based on this context, I need help with</h2>
-      <textarea placeholder="Describe your specific coding task or question here" class="big"></textarea>
-    </div>
-
-    <div class="copy-area">
-      To ensure the code works flawlessly on first implementation, please ask me any clarifying questions about missing details, assumptions, or specifics about my setup that could affect the solution. I want to avoid generic examples and ensure the code accounts for my exact environment and constraints.
-    </div>
-  </form>
+  <div class="copy-area">
+    To ensure the code works flawlessly on first implementation, please ask me any clarifying questions about missing details, assumptions, or specifics about my setup that could affect the solution. I want to avoid generic examples and ensure the code accounts for my exact environment and constraints.
+  </div>
 </body>
 </html>
