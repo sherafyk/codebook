@@ -35,7 +35,9 @@ ssh username@your-server-ip
 ````
 
 * **Purpose**: Connect to remote VPS (Debian, Ubuntu, etc.)
-* **Notes**: Replace `username` and `your-server-ip` accordingly. For most of my VPS projects, I usually SSH into ISPConfig-managed servers or direct root access nodes.
+
+> [!NOTE]
+> Replace `username` and `your-server-ip` accordingly. For most of my VPS projects, I usually SSH into ISPConfig-managed servers or direct root access nodes.
 
 #### Use SSH Key Instead of Password
 
