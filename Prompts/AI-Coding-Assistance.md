@@ -18,7 +18,7 @@ This template ensures the LLM has comprehensive context and prompts it to ask fo
 
 #### **System Environment & Infrastructure**
 
-* **Operating System:** `<span contenteditable="true">e.g., Debian 12, Ubuntu 22.04, Windows 11</span>`
+* **Operating System:** <span contenteditable="true">e.g., Debian 12, Ubuntu 22.04, Windows 11</span>
 * **Web Server:** `e.g., Apache 2.4, Nginx 1.18, IIS`
 * **Control Panel:** `e.g., ISPConfig, cPanel, Plesk, or none`
 * **Domain/URL:** `your-domain.com`
