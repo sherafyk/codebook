@@ -20,5 +20,7 @@ rm -rf /path/to/dir
 > [!NOTE]
 > `-r`: Recursive (includes subdirectories)
 > `-f`: Force (no prompt)
+> 
+<br>
 
 ## ISPConfig Tips
