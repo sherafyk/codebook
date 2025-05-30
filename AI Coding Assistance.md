@@ -5,6 +5,7 @@ This template ensures the LLM has comprehensive context and prompts it to ask fo
 
 > [!TIP]
 > - Fill in all relevant sections before your specific coding request
+> - If some sections are too specific or out of scope, you can omit
 > - Be as specific as possible with paths, versions, and configurations  
 > - Include any unique aspects of your setup that differ from standard installations
 > - The final request explicitly asks the LLM to probe for missing context
@@ -20,8 +21,8 @@ This template ensures the LLM has comprehensive context and prompts it to ask fo
 * **Web Server:** `e.g., Apache 2.4, Nginx 1.18, IIS`
 * **Control Panel:** `e.g., ISPConfig, cPanel, Plesk, or none`
 * **Domain/URL:** `your-domain.com`
-* **Document Root:** `full path to web root`
-* **Project Root:** `full path to project directory`
+* **Document/Web Root:** `e.g., /var/www/clients/client0/web1/web/`
+* **Project Root:** `e.g., /var/www/clients/client0/web1/project/`
 * **Database:** `MySQL 8.0, PostgreSQL 14, SQLite, etc.`
 * **Runtime Environment:** `Node.js v18, Python 3.11, PHP 8.2, etc.`
 
