@@ -30,7 +30,7 @@ rm -rf /path/to/dir
 
 ```bash
 ssh username@your-server-ip
-````
+```
 
 * **Purpose**: Connect to remote VPS (Debian, Ubuntu, etc.)
 
@@ -55,7 +55,7 @@ ssh -i /path/to/private_key username@your-server-ip
 
 ```bash
 sudo apt update && sudo apt upgrade -y
-````
+```
 
 * **Purpose**: Regular maintenance updates for VPS servers.
 * **Context**: Always run before major deployments, software installs, or server optimizations.
