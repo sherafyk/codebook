@@ -15,16 +15,39 @@
         <ul>
           {% assign directories = "wordpress,python,prompts,guides,apps-script,ssh-bash" | split: ',' %}
           {% for dir in directories %}
-          {% assign pages = site.html_pages
-             | where_exp: 'p', "p.path contains dir"
-             | where_exp: 'p', "p.path != 'index.html'"
-             | sort: 'permalink' %}
+            {% assign pages = site.html_pages
+               | where_exp: 'p', "p.path contains dir"
+               | where_exp: 'p', "p.path != 'index.html'"
+               | where_exp: 'p', "p.name != 'index.md'"
+               | sort: 'path' %}
             {% if pages != empty %}
               <li class="category">{{ dir | replace: '-', ' ' | capitalize }}
                 <ul>
+                  {% assign current_subdir = '' %}
                   {% for p in pages %}
-                    <li><a href="{{ p.permalink | relative_url }}">{{ p.title | default: p.permalink | split:'/' | last | replace:'-',' ' | capitalize }}</a></li>
+                    {% assign segments = p.path | split:'/' %}
+                    {% if segments.size > 2 %}
+                      {% assign subdir = segments[1] %}
+                      {% if current_subdir != subdir %}
+                        {% if current_subdir != '' %}
+                          </ul></li>
+                        {% endif %}
+                        <li class="subcategory">{{ subdir | replace:'-',' ' | capitalize }}
+                          <ul>
+                        {% assign current_subdir = subdir %}
+                      {% endif %}
+                      <li><a href="{{ p.permalink | relative_url }}">{{ p.title | default: p.permalink | split:'/' | last | replace:'-',' ' | capitalize }}</a></li>
+                    {% else %}
+                      {% if current_subdir != '' %}
+                        </ul></li>
+                        {% assign current_subdir = '' %}
+                      {% endif %}
+                      <li><a href="{{ p.permalink | relative_url }}">{{ p.title | default: p.permalink | split:'/' | last | replace:'-',' ' | capitalize }}</a></li>
+                    {% endif %}
                   {% endfor %}
+                  {% if current_subdir != '' %}
+                      </ul></li>
+                  {% endif %}
                 </ul>
               </li>
             {% endif %}
