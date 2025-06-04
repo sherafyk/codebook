@@ -28,7 +28,7 @@ apt update && apt upgrade -y
 <br>
 
 ## Step 3: Set up the site
-Using your ISPConfig 3 control panel, go ahead an add the domain you want to use under:
+Using your ISPConfig 3 control panel, go ahead and add the domain you want to use under:
 
 > Sites >>> Websites >>> Website >>> Add new website
 
