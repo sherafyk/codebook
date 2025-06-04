@@ -123,7 +123,7 @@ If you did everything right, and didn’t brutally mess up the steps above, your
 
 Follow the steps like selecting your language and other housekeeping stuff until you get to the page that shows you what you will need for installation. It should look like this:
 
-![Wordpress new instalation screen. Lists steps to getting started and will ask for database details. If you see this page, the instalation was a success.](https://sherafy.com/data/uploads/2024/03/image.png "WordPress New Instalation Screen")
+![Wordpress new installation screen. Lists steps to getting started and will ask for database details. If you see this page, the installation was a success.](https://sherafy.com/data/uploads/2024/03/image.png "WordPress New Installation Screen")
 
 Hopefully, you listened earlier and have those database user credentials ready to go. If not, go back to [step 4](#step-4-set-up-the-database-and-user), finish it, and come back here.  
 
