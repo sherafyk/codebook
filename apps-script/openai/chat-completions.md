@@ -61,7 +61,7 @@ Copy **`openai.gs`** snippets below into your Apps Script project, modify as you
 /* ========= CONFIG ========= */
 const CONFIG = {
   SHEET_NAME : 'Sheet1',                       // default worksheet, you can change this
-  API_URL    : 'https://api.openai.com/v1/chat/completions', //change this if needed, but FYI this template is not designed for images, assitants, etc.
+  API_URL    : 'https://api.openai.com/v1/chat/completions', // default endpoint for chat completions; not for images, assistants, etc.
   PROP_KEY   : 'OPENAI_API_KEY'                // Script Property name. DO NOT ENTER YOUR ACTUAL KEY, JUST LEAVE AS IS
 };
 ```
