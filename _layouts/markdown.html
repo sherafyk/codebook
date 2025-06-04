@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 1. Official GitHub Markdown CSS -->
     <link rel="stylesheet" href="{{ '/assets/github-markdown.css' | relative_url }}">
+    <!-- 2. Site wide styles -->
+    <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
   </head>
   <body>
     <!-- 2. Wrap in markdown-body for GitHub styling -->
@@ -14,6 +16,6 @@
     </article>
   </body>
   
-  <script src="/assets/copy-code-blocks.js"></script> 
-  <script src="/assets/admonitions.js"></script>
+  <script src="{{ '/assets/copy-code-blocks.js' | relative_url }}"></script>
+  <script src="{{ '/assets/admonitions.js' | relative_url }}"></script>
 </html>
