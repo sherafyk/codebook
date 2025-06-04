@@ -30,4 +30,22 @@ describe('copy-code-blocks script', () => {
 
     expect(button.innerText).toBe('Copied!');
   });
+
+  test('button text resets after timeout', async () => {
+    jest.useFakeTimers();
+    const html = '<pre><code>console.log("test");</code></pre>';
+    const dom = run(html);
+    const button = dom.window.document.querySelector('pre button');
+
+    // Click and wait for clipboard Promise to resolve
+    button.dispatchEvent(new dom.window.Event('click'));
+    await Promise.resolve();
+    expect(button.innerText).toBe('Copied!');
+
+    // Advance timers and ensure text resets
+    jest.advanceTimersByTime(2000);
+    await Promise.resolve();
+    expect(button.innerText).toBe('⿻');
+    jest.useRealTimers();
+  });
 });

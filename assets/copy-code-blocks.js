@@ -12,8 +12,11 @@ document.querySelectorAll('pre > code').forEach((codeBlock) => {
 
   button.addEventListener('click', () => {
     navigator.clipboard.writeText(codeBlock.innerText).then(() => {
+      const originalText = button.innerText;
       button.innerText = 'Copied!';
-      setTimeout(() => button.innerText = 'Copy', 2000);
+      setTimeout(() => {
+        button.innerText = originalText;
+      }, 2000);
     });
   });
 });
