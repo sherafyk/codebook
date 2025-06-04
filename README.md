@@ -4,10 +4,8 @@ A growing archive of code snippets, automations, and guides — powered by AI an
 
 - [Bash Commands](#bash-commands)
 - [Python Snippets](#python-snippets)
-- [PHP Quick Reference](#php-quick-reference)
 - [ISPConfig Tips](#ispconfig-tips)
 - [Google Apps Script](#google-apps-script)
-- [Cheat Sheets](#cheat-sheets)
 
 ---
 
