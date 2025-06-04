@@ -191,8 +191,8 @@ function runChatRow(promptRangeA1, outputRangeA1, model,
   const prompts = sheet.getRange(promptRangeA1).getValues()[0];
 
   const replies = [prompts.map(p =>
-    p ? callOpenAI(p, model, temperature) : '')
-  ];
+    p ? callOpenAI(p, model, temperature) : ''
+  )];
 
   sheet.getRange(outputRangeA1).offset(0, 0, 1, replies[0].length)
        .setValues(replies);
