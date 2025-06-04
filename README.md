@@ -11,6 +11,22 @@ A growing archive of code snippets, automations, and guides — powered by AI an
 
 ## Bash Commands
 
+#### Add or Remove the immutable attribute
+SSH in and run (replace the path as needed):  
+
+##### To Remove:    
+
+```bash
+sudo chattr -i /var/www/clients/client0/web17
+```
+> If you get a “Permission denied,” prepend with sudo.
+
+##### To Add back:    
+
+```bash
+sudo chattr +i /var/www/clients/client0/web17
+```
+
 #### Delete files recursively
 ```bash
 rm -rf /path/to/dir
