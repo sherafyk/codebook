@@ -15,7 +15,10 @@
         <ul>
           {% assign directories = "wordpress,python,prompts,guides,apps-script,ssh-bash" | split: ',' %}
           {% for dir in directories %}
-            {% assign pages = site.html_pages | where_exp: 'p', "p.path contains dir and p.path != 'index.html'" | sort: 'permalink' %}
+          {% assign pages = site.html_pages
+             | where_exp: 'p', "p.path contains dir"
+             | where_exp: 'p', "p.path != 'index.html'"
+             | sort: 'permalink' %}
             {% if pages != empty %}
               <li class="category">{{ dir | replace: '-', ' ' | capitalize }}
                 <ul>
