@@ -101,7 +101,7 @@ rmdir wordpress
 rm latest.tar.gz
 ```
 
-## Step 6: Adjust Permisions
+## Step 6: Adjust Permissions
 For some reason, people forget this step too often, and it causes huge issues with writing/reading/executing, so this step involves changing the ownership of this web directory to your proper ISPConfig 3 issued user for this directory. Pay close attention here, as this is where many people mess up beyond recovery.   
 
 Remember that path you copied? Look for the number after ‘client’ and ‘web’. In my case, it was ‘client0’ (default for ISPConfig) and ‘web6’ (web folder for my specific site). You will want to change the owner and group for the web directory for your site, so enter the following code and adjust based on your client and web numbers listed on your actual path.
