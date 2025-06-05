@@ -1,6 +1,6 @@
 # Loading Docker Package on Apache VPS - ISPConfig 3 panel
 
-> [!TIP]
+> \[!TIP]
 > Replace brackets (`<…>`) with values for **your** environment; keep placeholder paths if you’re just testing.
 
 ---
@@ -37,20 +37,20 @@ Internet user  ──► https://svg.example.org/…
 ## 2. Directory Layout (example)
 
 ```text
-/srv/apps/
-└─ vectorize-svc/            # <project_root>
-   ├─ app/                   # your FastAPI (or other) code
+/var/www/clients/clientX/webY/
+└─ <repository-name>/          # <project-folder>
+   ├─ app/                     # your FastAPI (or other) code
    ├─ docker-compose.yml
    ├─ Dockerfile
    └─ README.md
 ```
 
 > **Tip:**
-> If you already created an outer folder and then cloned the repo *inside* it, you’ll get *nested* `vectorize-svc/vectorize-svc`.
+> If you already created an outer folder and then cloned the repo *inside* it, you’ll get *nested* `<repository-name>/<repository-name>`.
 > Fix with:
 >
 > ```bash
-> rsync -av vectorize-svc/ ./ && rm -rf vectorize-svc
+> rsync -av <repository-name>/ ./ && rm -rf <repository-name>
 > ```
 
 ---
@@ -58,10 +58,10 @@ Internet user  ──► https://svg.example.org/…
 ## 3. Clone (or Update) the Repository
 
 ```bash
-cd /srv/apps
-git clone https://github.com/<you>/vectorize-svc.git
+cd /var/www/clients/clientX/webY/
+git clone https://github.com/<you>/<repository-name>
 # --- later, to fetch updates ---
-cd /srv/apps/vectorize-svc
+cd /var/www/clients/clientX/webY/<repository-name>
 git pull origin main
 ```
 
@@ -72,6 +72,7 @@ git pull origin main
 ### 4.1 Build locally (default)
 
 ```bash
+cd /var/www/clients/clientX/webY/<repository-name>
 docker compose down                # stop old containers if any
 docker compose up -d --build       # build & start detached
 ```
@@ -82,7 +83,7 @@ docker compose up -d --build       # build & start detached
 # docker-compose.yml (excerpt)
 services:
   app:
-    image: ghcr.io/<you>/<repo>:latest
+    image: ghcr.io/<you>/<repository-name>:latest
     ports:
       - "18080:8080"   # left = host port, right = in-container port
 ```
@@ -113,7 +114,11 @@ ports:
   - "18080:8080"
 ```
 
-* Re-create the service: `docker compose up -d --build`
+* Re-create the service:
+
+```bash
+docker compose up -d --build
+```
 
 Check:
 
@@ -196,7 +201,7 @@ ProxyPassReverse / http://127.0.0.1:18080/
 ## 9. Updating the Running Service
 
 ```bash
-cd /srv/apps/vectorize-svc
+cd /var/www/clients/clientX/webY/<repository-name>
 git pull origin main
 docker compose down
 docker compose up -d --build
@@ -223,4 +228,3 @@ docker compose up -d --build
 | Rate-limit abuse           | `mod_ratelimit` (Apache) or `slowapi` (FastAPI)                           |
 | Automatic CVE updates      | `unattended-upgrades` on Debian, `docker image prune --filter until=168h` |
 | Systemd instead of Compose | Generate a unit with `docker compose convert`                             |
-
