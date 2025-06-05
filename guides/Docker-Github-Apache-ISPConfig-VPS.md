@@ -29,7 +29,7 @@ Internet user  ──► https://svg.example.org/…
 | Docker Engine                | **20.10.x**       | `sudo apt-get install docker.io` or official repo |
 | Docker Compose v2            | **v2.30+**        | Stand-alone binary is simplest (see § 6.1)        |
 | Apache 2.4 + ISPConfig       | latest            | ISPConfig typically runs its panel on **:8080**   |
-| A spare sub-domain           | `svg.example.org` | DNS must point to your VPS                        |
+| A spare sub-domain           | `sub.example.com` | DNS must point to your VPS                        |
 | SSH access as root (or sudo) | —                 |                                                   |
 
 ---
