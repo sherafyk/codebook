@@ -37,7 +37,7 @@ Internet user  ──► https://svg.example.org/…
 ## 2. Directory Layout (example)
 
 ```text
-/var/www/clients/clientX/webY/
+/var/www/clients/client<X>/web<Y>/
 └─ <repository-name>/          # <project-folder>
    ├─ app/                     # your FastAPI (or other) code
    ├─ docker-compose.yml
@@ -58,10 +58,10 @@ Internet user  ──► https://svg.example.org/…
 ## 3. Clone (or Update) the Repository
 
 ```bash
-cd /var/www/clients/clientX/webY/
+cd /var/www/clients/client<X>/web<Y>/
 git clone https://github.com/<you>/<repository-name>
 # --- later, to fetch updates ---
-cd /var/www/clients/clientX/webY/<repository-name>
+cd /var/www/clients/client<X>/web<Y>/<repository-name>
 git pull origin main
 ```
 
@@ -72,7 +72,7 @@ git pull origin main
 ### 4.1 Build locally (default)
 
 ```bash
-cd /var/www/clients/clientX/webY/<repository-name>
+cd /var/www/clients/client<X>/web<Y>/<repository-name>
 docker compose down                # stop old containers if any
 docker compose up -d --build       # build & start detached
 ```
@@ -152,9 +152,9 @@ sudo lsof -i :8080          # find culprit
 ### 6.3 Immutable ISPConfig directories
 
 ```bash
-sudo chattr -i /var/www/clients/clientX/webY
+sudo chattr -i /var/www/clients/client<X>/web<Y>
 # ... make changes ...
-sudo chattr +i /var/www/clients/clientX/webY
+sudo chattr +i /var/www/clients/client<X>/web<Y>
 ```
 
 ---
@@ -164,7 +164,7 @@ sudo chattr +i /var/www/clients/clientX/webY
 1. **Create site** in ISPConfig → *Sites › Add new website*
 
    * Domain: `svg.example.org`
-   * Document Root: keep default (`/var/www/clients/clientX/webY/web`) – ignored for proxying.
+   * Document Root: keep default (`/var/www/clients/client<X>/web<Y>/web`) – ignored for proxying.
 
 2. **Enable proxy modules** (once):
 
@@ -201,7 +201,7 @@ ProxyPassReverse / http://127.0.0.1:18080/
 ## 9. Updating the Running Service
 
 ```bash
-cd /var/www/clients/clientX/webY/<repository-name>
+cd /var/www/clients/client<X>/web<Y>/<repository-name>
 git pull origin main
 docker compose down
 docker compose up -d --build
