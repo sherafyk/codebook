@@ -28,6 +28,65 @@ docker-compose up -d --build
  ```
 > Check if it’s running: Look for “Up” in the STATUS column.
 
+
+### UFW & Ports
+
+#### Check if Port 3000 is Listening**
+
+Run:
+
+```bash
+sudo lsof -i :3000
+```
+
+or:
+
+```bash
+sudo netstat -tuln | grep :3000
+```
+
+You should see output like:
+
+```
+tcp    0   0 0.0.0.0:3000   0.0.0.0:*   LISTEN
+```
+
+If nothing appears, it means **nothing is listening** on port 3000—your container may not be running or bound correctly.
+
+---
+
+#### Allow Port 3000 via UFW**
+
+To allow traffic on port 3000 (e.g., for Node.js apps or Docker containers), run:
+
+```bash
+sudo ufw allow 3000/tcp
+```
+
+Then confirm with:
+
+```bash
+sudo ufw status
+```
+
+You should see something like:
+
+```
+3000/tcp                   ALLOW       Anywhere
+```
+
+---
+
+#### (Optional) Reload UFW**
+
+Usually not necessary, but if in doubt:
+
+```bash
+sudo ufw reload
+```
+
+
+
 ## Bash Commands
 
 #### Add or Remove the immutable attribute
