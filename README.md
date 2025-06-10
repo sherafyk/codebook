@@ -32,35 +32,39 @@ docker-compose up -d --build
 ### UFW & Ports
 
 #### Check if Port 3000 is Listening**
+```
+curl -I http://127.0.0.1:2501
+```
+Checks HTTP Response  
 
 Run:
 
 ```bash
-sudo lsof -i :3000
+sudo lsof -i :2501
 ```
 
 or:
 
 ```bash
-sudo netstat -tuln | grep :3000
+sudo netstat -tuln | grep :2501
 ```
 
 You should see output like:
 
 ```
-tcp    0   0 0.0.0.0:3000   0.0.0.0:*   LISTEN
+tcp    0   0 0.0.0.0:2501   0.0.0.0:*   LISTEN
 ```
 
 If nothing appears, it means **nothing is listening** on port 3000—your container may not be running or bound correctly.
 
 ---
 
-#### Allow Port 3000 via UFW**
+#### Allow Port 2501 via UFW**
 
-To allow traffic on port 3000 (e.g., for Node.js apps or Docker containers), run:
+To allow traffic on port 2501 (e.g., for Node.js apps or Docker containers), run:
 
 ```bash
-sudo ufw allow 3000/tcp
+sudo ufw allow 2501/tcp
 ```
 
 Then confirm with:
@@ -72,7 +76,7 @@ sudo ufw status
 You should see something like:
 
 ```
-3000/tcp                   ALLOW       Anywhere
+2501/tcp                   ALLOW       Anywhere
 ```
 
 ---
