@@ -9,24 +9,24 @@ A growing archive of code snippets, automations, and guides — powered by AI an
 
 ---
 
-> [!TIP]
-> ### Useful Snippets
-> ```
-> git pull origin main
-> ```
-> > Pull the latest changes
-> 
-> ```
-> docker-compose down
-> docker-compose up -d --build
-> ```
-> > `down` stops and removes the old containers.  
-> > `up -d --build` rebuilds the image with the new code, starts the containers in the background.
-> 
-> ```
-> docker-compose ps
-> ```
-> > Check if it’s running: Look for “Up” in the STATUS column.
+### Useful Snippets
+```
+git pull origin main
+```
+> Pull the latest changes
+
+```
+docker-compose down
+docker-compose up -d --build
+```
+
+> `down` stops and removes the old containers.  
+> `up -d --build` rebuilds the image with the new code, starts the containers in the background.
+ 
+ ```
+ docker-compose ps
+ ```
+> Check if it’s running: Look for “Up” in the STATUS column.
 
 ## Bash Commands
 
