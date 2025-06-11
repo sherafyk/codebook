@@ -4,47 +4,53 @@ A carefully organized reference of your most–used server‑side, DevOps, and
 
 ---
 
-## Table of Contents
+## Table of Contents
 
 *(click to jump)*
 
-* [📡 SSH & Remote Access](#-ssh--remote-access)
-  * [Connecting](#connecting)
-  * [Privilege Escalation](#privilege-escalation)
-* [🔧 System Administration](#-system-administration)
+* [SSH & Remote Access](#ssh--remote-access)
 
-  * [System Updates](#system-updates)
-  * [Reboot & Power](#reboot--power)
-  * [Resource Monitoring](#resource-monitoring)
+  * [Connecting](#connecting)
+  * [Privilege Escalation](#privilege-escalation)
+* [System Administration](#system-administration)
+
+  * [System Updates](#system-updates)
+  * [Reboot & Power](#reboot--power)
+  * [Resource Monitoring](#resource-monitoring)
   * [Cleanup](#cleanup)
-* [🌐 Web Servers (Apache)](#-web-servers-apache)
+* [Web Servers (Apache)](#web-servers-apache)
 
   * [Installation](#installation)
-  * [Service Control](#service-control)
-  * [Configuration Checks](#configuration-checks)
-* [🐳 Docker](#-docker)
+  * [Service Control](#service-control)
+  * [Configuration Checks](#configuration-checks)
+* [Docker](#docker)
 
-  * [Installation & Service](#installation--service)
+  * [Installation & Service](#installation--service)
   * [Images](#images)
   * [Containers](#containers)
-  * [Docker Compose](#docker-compose)
-* [🟢 Node.js & pm2](#-nodejs--pm2)
+  * [Docker Compose](#docker-compose)
+* [Node.js & pm2](#nodejs--pm2)
 
   * [Installation](#installation-1)
-  * [Runtime & Process Control](#runtime--process-control)
-* [📂 File Transfer & Backups](#-file-transfer--backups)
-* [📦 Package Management (apt)](#-package-management-apt)
-* [📊 Monitoring & Logs](#-monitoring--logs)
-* [🔥 Firewall (UFW) & Networking](#-firewall-ufw--networking)
-* [⚙️ Service Management (systemd)](#-service-management-systemd)
-* [📝 File Permissions & Ownership](#-file-permissions--ownership)
-* [🔪 Process Management](#-process-management)
-* [🐘 Database Utilities](#-database-utilities)
-* [🛠 Cron Jobs](#-cron-jobs)
-* [🌍 ISPConfig Shortcuts](#-ispconfig-shortcuts)
-* [📰 WordPress CLI](#-wordpress-cli)
-* [🐙 Git / GitHub](#-git--github)
-* [🔀 Miscellaneous Tools](#-miscellaneous-tools)
+  * [Runtime & Process Control](#runtime--process-control)
+* [File Transfer & Backups](#file-transfer--backups)
+* [Package Management (apt)](#package-management-apt)
+* [Monitoring & Logs](#monitoring--logs)
+* [Firewall (UFW) & Networking](#firewall-ufw--networking)
+* [Service Management (systemd)](#service-management-systemd)
+* [File Permissions & Ownership](#file-permissions--ownership)
+* [Process Management](#process-management)
+* [Database Utilities](#database-utilities)
+* [Cron Jobs](#cron-jobs)
+* [ISPConfig Shortcuts](#ispconfig-shortcuts)
+* [WordPress CLI](#wordpress-cli)
+* [Git / GitHub](#git--github)
+* [Miscellaneous Tools](#miscellaneous-tools)
+
+
+---
+
+If you want your **Table of Contents auto-updated** as you edit, I recommend the [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) extension for VS Code!
 
 ---
 
