@@ -1,542 +1,882 @@
-# 🧠 Welcome to the Sherafy Codebook
+# 🧠 Sherafy Codebook
 
-A growing archive of code snippets, automations, and guides — powered by AI and practice.
-
-- [Bash Commands](#bash-commands)
-- [Python Snippets](#python-snippets)
-- [ISPConfig Tips](#ispconfig-tips)
-- [Google Apps Script](#google-apps-script)
+A carefully organized reference of your most–used server‑side, DevOps, and GitHub SSH commands. Everything is grouped into intuitive sections (H2), sub‑sections (H3), and every copy‑ready command begins with an H4 heading, a fenced code block, and a concise quoted explanation.
 
 ---
 
-### Useful Snippets
-```
-git pull origin main
-```
-> Pull the latest changes
+## Table of Contents
 
-```
-docker-compose down
-docker-compose up -d --build
-```
+*(click to jump)*
 
-> `down` stops and removes the old containers.  
-> `up -d --build` rebuilds the image with the new code, starts the containers in the background.
- 
- ```
- docker-compose ps
- ```
-> Check if it’s running: Look for “Up” in the STATUS column.
+* [📡 SSH & Remote Access](#-ssh--remote-access)
+  * [Connecting](#connecting)
+  * [Privilege Escalation](#privilege-escalation)
+* [🔧 System Administration](#-system-administration)
 
+  * [System Updates](#system-updates)
+  * [Reboot & Power](#reboot--power)
+  * [Resource Monitoring](#resource-monitoring)
+  * [Cleanup](#cleanup)
+* [🌐 Web Servers (Apache)](#-web-servers-apache)
 
-### UFW & Ports
+  * [Installation](#installation)
+  * [Service Control](#service-control)
+  * [Configuration Checks](#configuration-checks)
+* [🐳 Docker](#-docker)
 
-#### Check if Port 3000 is Listening**
-```
-curl -I http://127.0.0.1:2501
-```
-Checks HTTP Response  
+  * [Installation & Service](#installation--service)
+  * [Images](#images)
+  * [Containers](#containers)
+  * [Docker Compose](#docker-compose)
+* [🟢 Node.js & pm2](#-nodejs--pm2)
 
-Run:
-
-```bash
-sudo lsof -i :2501
-```
-
-or:
-
-```bash
-sudo netstat -tuln | grep :2501
-```
-
-You should see output like:
-
-```
-tcp    0   0 0.0.0.0:2501   0.0.0.0:*   LISTEN
-```
-
-If nothing appears, it means **nothing is listening** on port 3000—your container may not be running or bound correctly.
+  * [Installation](#installation-1)
+  * [Runtime & Process Control](#runtime--process-control)
+* [📂 File Transfer & Backups](#-file-transfer--backups)
+* [📦 Package Management (apt)](#-package-management-apt)
+* [📊 Monitoring & Logs](#-monitoring--logs)
+* [🔥 Firewall (UFW) & Networking](#-firewall-ufw--networking)
+* [⚙️ Service Management (systemd)](#-service-management-systemd)
+* [📝 File Permissions & Ownership](#-file-permissions--ownership)
+* [🔪 Process Management](#-process-management)
+* [🐘 Database Utilities](#-database-utilities)
+* [🛠 Cron Jobs](#-cron-jobs)
+* [🌍 ISPConfig Shortcuts](#-ispconfig-shortcuts)
+* [📰 WordPress CLI](#-wordpress-cli)
+* [🐙 Git / GitHub](#-git--github)
+* [🔀 Miscellaneous Tools](#-miscellaneous-tools)
 
 ---
 
-#### Allow Port 2501 via UFW**
+## 📡 SSH & Remote Access
 
-To allow traffic on port 2501 (e.g., for Node.js apps or Docker containers), run:
+### Connecting
 
-```bash
-sudo ufw allow 2501/tcp
-```
-
-Then confirm with:
-
-```bash
-sudo ufw status
-```
-
-You should see something like:
-
-```
-2501/tcp                   ALLOW       Anywhere
-```
-
----
-
-#### (Optional) Reload UFW**
-
-Usually not necessary, but if in doubt:
-
-```bash
-sudo ufw reload
-```
-
-
-
-## Bash Commands
-
-#### Add or Remove the immutable attribute
-SSH in and run (replace the path as needed):  
-
-##### To Remove:    
-
-```bash
-sudo chattr -i /var/www/clients/client0/web17
-```
-> If you get a “Permission denied,” prepend with sudo.
-
-##### To Add back:    
-
-```bash
-sudo chattr +i /var/www/clients/client0/web17
-```
-
-#### Delete files recursively
-```bash
-rm -rf /path/to/dir
-```
-> [!NOTE]
-> `-r`: Recursive (includes subdirectories)  
-> `-f`: Force (no prompt)  
-
-> [!CAUTION]
-> 'This can end real bad...' Triple check the path is correct.  
-
-<br>
-
-### SSH and Server Access
-
-#### Connect to VPS Server
+#### Connect to VPS Server
 
 ```bash
 ssh username@your-server-ip
 ```
 
-* **Purpose**: Connect to remote VPS (Debian, Ubuntu, etc.)
+> Opens an SSH session to the target host. Replace *username* and *IP* accordingly.
 
-> [!NOTE]
-> Replace `username` and `your-server-ip` accordingly. For most of my VPS projects, I usually SSH into ISPConfig-managed servers or direct root access nodes.
-
-#### Use SSH Key Instead of Password
+#### Use SSH Key Instead of Password
 
 ```bash
 ssh -i /path/to/private_key username@your-server-ip
 ```
 
-* **Purpose**: Use SSH key-based login.
-* **Notes**: Safer than password logins. Always keep private keys secure.
+> Authenticates with an SSH key for stronger, password‑less log‑ins. Keep private keys secure and permissions at `600`.
 
+### Privilege Escalation
 
-<br>
+#### Switch to Root
 
-### System Updates & Package Management
+```bash
+sudo -i
+```
 
-#### Update & Upgrade Debian/Ubuntu Server
+> Starts a root shell so you don’t need to prepend each command with `sudo`. Use sparingly on production servers.
+
+---
+
+## 🔧 System Administration
+
+### System Updates
+
+#### Update & Upgrade Packages
 
 ```bash
 sudo apt update && sudo apt upgrade -y
 ```
 
-* **Purpose**: Regular maintenance updates for VPS servers.
-* **Context**: Always run before major deployments, software installs, or server optimizations.
+> Refreshes package lists and installs available updates.
 
-#### Clean Up Unnecessary Packages
-
-```bash
-sudo apt autoremove -y
-```
-
-* **Purpose**: Free up disk space after package updates.
-* **Context**: Housekeeping after major package upgrades or PHP version changes.
-
-#### Full Distribution Upgrade
+#### Full Distribution Upgrade
 
 ```bash
 sudo apt full-upgrade -y
 ```
 
-* **Purpose**: Apply more aggressive upgrades that may include kernel and core package changes.
-* **Context**: Occasionally used after major Ubuntu/Debian point releases. Use with caution on production servers.
+> Performs a more aggressive upgrade (can include kernel / dependency changes).
 
-#### Upgrade to Latest Distribution Release (Advanced)
+#### Upgrade to Next Release (Advanced)
 
 ```bash
 sudo do-release-upgrade
 ```
 
-* **Purpose**: Upgrade to the next Ubuntu/Debian release version.
-* **Caution**: Only use after backups, testing, and compatibility checks.
+> Moves Ubuntu/Debian to the next release. Backup and test first.
 
-#### Check Current OS Version
-
-```bash
-lsb_release -a
-```
-
-* **Purpose**: Confirm exact OS version for troubleshooting or compatibility checks.
-
-#### Check Kernel Version
-
-```bash
-uname -r
-```
-
-* **Purpose**: Verify running kernel version after updates.
-
-#### Search for Package
-
-```bash
-apt search packagename
-```
-
-* **Purpose**: Find installable package names before installing.
-
-#### Install Specific Package
-
-```bash
-sudo apt install package-name
-```
-
-* **Purpose**: Install any system tool, utility, or dependency.
-* **Example**: Install PHP extensions, certbot, mysql-client, python3-pip, etc.
-
-#### Reinstall Package (If Broken)
-
-```bash
-sudo apt install --reinstall package-name
-```
-
-* **Purpose**: Repair corrupted packages without removing configuration files.
-
-#### Remove Unused Package
-
-```bash
-sudo apt remove package-name
-```
-
-* **Purpose**: Clean up unneeded packages after decommissioning features.
-
-#### Completely Purge Package
-
-```bash
-sudo apt purge package-name
-```
-
-* **Purpose**: Fully remove package and associated config files.
-
-#### Clean Out Local Package Cache
-
-```bash
-sudo apt clean
-```
-
-* **Purpose**: Remove all cached package files to free up disk space.
-
-#### Fix Broken Package Dependencies
+#### Fix Broken Dependencies
 
 ```bash
 sudo apt --fix-broken install
 ```
 
-* **Purpose**: Auto-resolve broken dependencies after interrupted installs.
+> Attempts to resolve incomplete or conflicting package installs.
 
-#### List All Installed Packages
+### Reboot & Power
 
-```bash
-dpkg --get-selections
-```
-
-* **Purpose**: Full inventory of installed packages (helpful for server migrations or audit logs).
-
-#### List Recently Installed Packages
+#### Reboot Server
 
 ```bash
-grep "install " /var/log/dpkg.log
+sudo reboot
 ```
 
-* **Purpose**: See package changes for recent activity (helps in debugging issues after updates).
+> Gracefully restarts the machine.
 
-#### Show Package Info
+#### Shutdown Server
 
 ```bash
-apt show package-name
+sudo poweroff
 ```
 
-* **Purpose**: Display detailed info including version, dependencies, maintainers, etc.
+> Powers down the system cleanly.
+
+### Resource Monitoring
+
+#### Check Uptime
+
+```bash
+uptime
+```
+
+> Shows how long the system has been running and current load averages.
+
+#### Top‑Style Monitor (htop)
+
+```bash
+htop
+```
+
+> Interactive process viewer (install with `sudo apt install htop`).
+
+### Cleanup
+
+#### Remove Unused Packages
+
+```bash
+sudo apt autoremove -y
+```
+
+> Deletes orphaned dependencies.
+
+#### Clean apt Cache
+
+```bash
+sudo apt clean
+```
+
+> Clears cached `.deb` packages to free disk space.
 
 ---
 
-### Disk Usage & Space Monitoring
+## 🌐 Web Servers (Apache)
 
-#### Check Disk Usage Summary
+### Installation
 
-```bash
-df -h
-```
-
-* **Purpose**: Show disk space usage in human-readable format.
-* **Useful For**: Ensuring VPS does not run out of space during AI pipelines or Docker image pulls.
-
-#### Analyze Directory Sizes
+#### Install Apache
 
 ```bash
-du -sh *
+sudo apt install apache2 -y
 ```
 
-* **Purpose**: Quick check of folder sizes in current directory.
+> Installs the Apache HTTP server on Debian/Ubuntu.
 
----
+### Service Control
 
-### File Transfers & Backups
-
-#### Copy File to Server (Local -> Remote)
+#### Start Apache
 
 ```bash
-scp /local/path/to/file username@your-server-ip:/remote/path
+sudo systemctl start apache2
 ```
 
-#### Copy File from Server (Remote -> Local)
+> Launches the web server immediately.
+
+#### Stop Apache
 
 ```bash
-scp username@your-server-ip:/remote/path/to/file /local/path
+sudo systemctl stop apache2
 ```
 
-* **Purpose**: Fast way to move backup files, logs, export files, or datasets to/from VPS.
+> Halts the service.
 
-#### Full Folder Copy With SCP
-
-```bash
-scp -r /local/path username@your-server-ip:/remote/path
-```
-
-* **Purpose**: Copy entire directories with contents.
-
----
-
-### Service Management (Systemd)
-
-#### Restart Apache Web Server
+#### Restart Apache
 
 ```bash
 sudo systemctl restart apache2
 ```
 
-#### Restart PHP-FPM (if used)
+> Stops and starts Apache—use after config changes.
+
+#### Reload Apache Config
 
 ```bash
-sudo systemctl restart php8.2-fpm
+sudo systemctl reload apache2
 ```
 
-* **Notes**: Replace with your PHP version.
+> Applies config changes without dropping live connections.
 
-#### Restart ISPConfig Services
+#### Enable Apache on Boot
 
 ```bash
-sudo systemctl restart ispconfig_server
+sudo systemctl enable apache2
 ```
 
-* **Purpose**: Reload ISPConfig if making config changes on `rna.airis.ca`.
+> Ensures Apache starts automatically after reboot.
+
+#### Disable Apache on Boot
+
+```bash
+sudo systemctl disable apache2
+```
+
+> Removes Apache from the startup sequence.
+
+### Configuration Checks
+
+#### Apache Config Test
+
+```bash
+sudo apache2ctl configtest
+```
+
+> Validates syntax before a reload/restart.
 
 ---
 
-### File Permissions & Ownership
+## 🐳 Docker
 
-#### Change File Ownership (Typical ISPConfig VPS)
+### Installation & Service
 
-```bash
-sudo chown -R web16:client0 /var/www/clients/client0/web16/web
-```
-
-* **Purpose**: Set ownership correctly for files uploaded manually.
-* **Context**: Used often when working with `tools.airis.ca` document generator.
-
-#### Change Permissions
+#### Install Docker Engine
 
 ```bash
-sudo chmod -R 755 /path/to/directory
+sudo apt install docker.io -y
 ```
 
-* **Purpose**: Set directory permissions for proper execution/access.
+> Installs Docker from the distro repo.
+
+#### Start Docker Daemon
+
+```bash
+sudo systemctl start docker
+```
+
+> Begins the Docker service.
+
+#### Enable Docker on Boot
+
+```bash
+sudo systemctl enable docker
+```
+
+> Auto‑starts Docker after reboot.
+
+#### Check Docker Version
+
+```bash
+docker --version
+```
+
+> Verifies the client/daemon version.
+
+### Images
+
+#### Pull Image from Hub
+
+```bash
+docker pull nginx
+```
+
+> Downloads the latest Nginx image.
+
+#### List Downloaded Images
+
+```bash
+docker images
+```
+
+> Local image inventory.
+
+### Containers
+
+#### Run Container (Detached)
+
+```bash
+docker run -d --name mynginx nginx
+```
+
+> Spins up *mynginx* in the background.
+
+#### List Running Containers
+
+```bash
+docker ps
+```
+
+> Shows active containers.
+
+#### List All Containers
+
+```bash
+docker ps -a
+```
+
+> Includes stopped containers.
+
+#### Stop Container
+
+```bash
+docker stop mynginx
+```
+
+> Gracefully stops the container.
+
+#### Restart Container
+
+```bash
+docker restart mynginx
+```
+
+> Stops then starts the container.
+
+#### Remove Container
+
+```bash
+docker rm mynginx
+```
+
+> Deletes a stopped container.
+
+#### Remove Image
+
+```bash
+docker rmi nginx
+```
+
+> Frees disk space by deleting the image.
+
+#### Exec into Container
+
+```bash
+docker exec -it mynginx bash
+```
+
+> Opens an interactive shell inside the container.
+
+#### Build Image from Dockerfile
+
+```bash
+docker build -t myapp .
+```
+
+> Creates the *myapp* image from the current directory context.
+
+### Docker Compose
+
+#### Start Compose Stack
+
+```bash
+docker-compose up -d
+```
+
+> Builds (if needed) and runs services in detached mode.
+
+#### Stop & Remove Stack
+
+```bash
+docker-compose down
+```
+
+> Brings containers down and removes default networks/volumes.
 
 ---
 
-### Tarball Compression for Backups
+## 🟢 Node.js & pm2
 
-#### Create a Compressed Archive
+### Installation
 
-```bash
-tar -czvf backup.tar.gz /path/to/directory
-```
-
-#### Extract Compressed Archive
+#### Install Node via NVM
 
 ```bash
-tar -xzvf backup.tar.gz
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+source ~/.bashrc
+nvm install node
 ```
 
-* **Use Case**: Backing up `codebook`, `WordPress`, or app deployment folders.
+> Installs NVM then the latest LTS Node.js.
+
+#### Check Node Version
+
+```bash
+node -v
+```
+
+> Prints Node version.
+
+#### Check npm Version
+
+```bash
+npm -v
+```
+
+> Prints npm version.
+
+### Runtime & Process Control
+
+#### Install pm2 Globally
+
+```bash
+sudo npm install -g pm2
+```
+
+> Production‑grade process manager.
+
+#### Start App with pm2
+
+```bash
+pm2 start app.js
+```
+
+> Launches *app.js* under pm2 supervision.
+
+#### List pm2 Processes
+
+```bash
+pm2 list
+```
+
+> Overview of managed apps.
+
+#### Restart pm2 App
+
+```bash
+pm2 restart app
+```
+
+> Zero‑downtime restart.
+
+#### Stop pm2 App
+
+```bash
+pm2 stop app
+```
+
+> Gracefully stops the app.
+
+#### View Live Logs
+
+```bash
+pm2 logs app
+```
+
+> Streams log output.
+
+#### Save pm2 Process List
+
+```bash
+pm2 save
+```
+
+> Persists process list for reboot‑survival.
+
+#### Enable pm2 on Boot
+
+```bash
+pm2 startup
+```
+
+> Generates and installs init script.
 
 ---
 
-### Process Management
+## 📂 File Transfer & Backups
 
-#### Monitor Running Processes
-
-```bash
-top
-```
-
-#### Kill Process by PID
+#### Copy File to Server
 
 ```bash
-kill -9 PID
+scp /local/path/file username@your-server-ip:/remote/path
 ```
 
-* **Purpose**: Force-stop stuck processes or hung deployments.
+> Secure copy from local → remote.
 
-#### Find Process by Port
+#### Copy File from Server
 
 ```bash
-sudo lsof -i :PORT
+scp username@your-server-ip:/remote/path/file /local/path
 ```
 
-* **Use Case**: Check which process is locking a port during Node or Python testing.
+> Remote → local.
 
----
-
-### Log File Inspection
-
-#### Tail Last Lines of a Log
+#### Recursive Directory Copy
 
 ```bash
-tail -n 100 /path/to/log/file
+scp -r /local/dir username@your-server-ip:/remote/dir
 ```
 
-#### Live Follow Log
+> Copies entire folders.
 
-```bash
-tail -f /path/to/log/file
-```
-
-* **Use Case**: Monitor Apache logs, PHP errors, or cron jobs.
-
----
-
-### Firewall Management (UFW)
-
-#### Allow Port (e.g., 8080 for Node.js Testing)
-
-```bash
-sudo ufw allow 8080
-```
-
-#### Reload UFW
-
-```bash
-sudo ufw reload
-```
-
-#### Check Firewall Status
-
-```bash
-sudo ufw status
-```
-
----
-
-### Cron Jobs
-
-#### Edit Crontab (Per User)
-
-```bash
-crontab -e
-```
-
-#### List Existing Cron Jobs
-
-```bash
-crontab -l
-```
-
-* **Use Case**: Automate backups, document generation tasks on `tools.airis.ca`, or scraping tasks.
-
----
-
-### Database Utilities
-
-#### MySQL Dump Database (Backup)
+#### MySQL Dump Database
 
 ```bash
 mysqldump -u username -p database_name > backup.sql
 ```
 
-#### Restore MySQL Database
+> Creates SQL backup.
+
+#### Restore MySQL Database
 
 ```bash
 mysql -u username -p database_name < backup.sql
 ```
 
-* **Use Case**: Moving WordPress or app databases between servers.
+> Imports backup into DB.
+
+#### Tar and Compress Directory
+
+```bash
+tar -czvf backup.tar.gz /path/to/directory
+```
+
+> Creates compressed archive.
+
+#### Extract Compressed Archive
+
+```bash
+tar -xzvf backup.tar.gz
+```
+
+> Unpacks the archive into the current directory.
 
 ---
 
-### WordPress CLI (wp-cli)
+## 📦 Package Management (apt)
 
-#### Update Plugins via CLI
+#### Search for Package
+
+```bash
+apt search packagename
+```
+
+> Finds candidate packages.
+
+#### Install Package
+
+```bash
+sudo apt install package-name
+```
+
+> Installs desired software.
+
+#### Reinstall Package
+
+```bash
+sudo apt install --reinstall package-name
+```
+
+> Repairs broken installs.
+
+#### Remove Package
+
+```bash
+sudo apt remove package-name
+```
+
+> Uninstalls but keeps config.
+
+#### Purge Package
+
+```bash
+sudo apt purge package-name
+```
+
+> Removes package and configs.
+
+#### List Installed Packages
+
+```bash
+dpkg --get-selections
+```
+
+> Useful for audits & migrations.
+
+#### Show Package Info
+
+```bash
+apt show package-name
+```
+
+> Displays description, dependencies, etc.
+
+---
+
+## 📊 Monitoring & Logs
+
+#### View System Journal
+
+```bash
+sudo journalctl -xe
+```
+
+> Shows recent system‑wide logs with errors highlighted.
+
+#### Follow Apache Error Log
+
+```bash
+sudo tail -f /var/log/apache2/error.log
+```
+
+> Live‑streams web‑server errors.
+
+#### Follow Syslog
+
+```bash
+sudo tail -f /var/log/syslog
+```
+
+> Distribution‑agnostic system messages.
+
+#### View Listening Ports
+
+```bash
+sudo netstat -tuln | grep LISTEN
+```
+
+> Confirms which services are accepting connections.
+
+---
+
+## 🔥 Firewall (UFW) & Networking
+
+#### Allow Port (Example 2501)
+
+```bash
+sudo ufw allow 2501/tcp
+```
+
+> Opens port 2501 for TCP traffic.
+
+#### Reload UFW
+
+```bash
+sudo ufw reload
+```
+
+> Applies rule changes.
+
+#### Check Firewall Status
+
+```bash
+sudo ufw status
+```
+
+> Lists active rules.
+
+#### Check Port Reachability (Localhost)
+
+```bash
+curl -I http://127.0.0.1:2501
+```
+
+> Quick HTTP response check.
+
+---
+
+## ⚙️ Service Management (systemd)
+
+#### Restart Apache (Web)
+
+```bash
+sudo systemctl restart apache2
+```
+
+> Common after editing vhosts.
+
+#### Restart PHP‑FPM
+
+```bash
+sudo systemctl restart php8.2-fpm
+```
+
+> Swap version as needed.
+
+#### Restart ISPConfig Daemon
+
+```bash
+sudo systemctl restart ispconfig_server
+```
+
+> Reloads panel backend services.
+
+---
+
+## 📝 File Permissions & Ownership
+
+#### Change Ownership (Recursive)
+
+```bash
+sudo chown -R web16:client0 /var/www/clients/client0/web16/web
+```
+
+> Typical ISPConfig ownership pattern.
+
+#### Change Permissions (Directories 755)
+
+```bash
+sudo chmod -R 755 /path/to/directory
+```
+
+> Grants execute to owner/group/world for directories.
+
+#### Add Immutable Attribute
+
+```bash
+sudo chattr +i /var/www/clients/client0/web17
+```
+
+> Protects files from modification—even by root.
+
+#### Remove Immutable Attribute
+
+```bash
+sudo chattr -i /var/www/clients/client0/web17
+```
+
+> Allows edits again.
+
+---
+
+## 🔪 Process Management
+
+#### Monitor Processes (top)
+
+```bash
+top
+```
+
+> Quick real‑time CPU / memory view.
+
+#### Kill Process by PID
+
+```bash
+kill -9 PID
+```
+
+> Force‑terminates the given PID.
+
+#### Find Process by Port
+
+```bash
+sudo lsof -i :PORT
+```
+
+> Useful when a service refuses to bind.
+
+---
+
+## 🐘 Database Utilities
+
+*See File Transfer & Backups section for dump/restore commands.*
+
+---
+
+## 🛠 Cron Jobs
+
+#### Edit Crontab
+
+```bash
+crontab -e
+```
+
+> Opens the current user’s job list in `$EDITOR`.
+
+#### List Cron Jobs
+
+```bash
+crontab -l
+```
+
+> Shows scheduled tasks.
+
+---
+
+## 🌍 ISPConfig Shortcuts
+
+#### Update ISPConfig
+
+```bash
+cd /tmp && wget -O ispconfig_update.sh https://get.ispconfig.org && sudo bash ispconfig_update.sh
+```
+
+> Official update method; backup first.
+
+#### Restart Core Services
+
+```bash
+sudo systemctl restart apache2 postfix dovecot pure-ftpd-mysql
+```
+
+> Web, mail, and FTP stack reload.
+
+#### Backup ISPConfig Database
+
+```bash
+mysqldump -u root -p dbispconfig > dbispconfig_backup.sql
+```
+
+> Always dump before upgrades.
+
+---
+
+## 📰 WordPress CLI
+
+#### Update All Plugins
 
 ```bash
 wp plugin update --all
 ```
 
-#### Clear WP Cache
+> Keeps plugins patched.
+
+#### Flush WP Cache
 
 ```bash
 wp cache flush
 ```
 
-#### Search & Replace (Database)
+> Clears transients/object cache.
+
+#### Search & Replace DB Strings
 
 ```bash
 wp search-replace 'oldurl.com' 'newurl.com'
 ```
 
-* **Purpose**: Very helpful when migrating Elementor templates or AIO sites.
+> Essential after domain migrations.
 
 ---
 
-### Git / Deployment Housekeeping
+## 🐙 Git / GitHub
 
-#### Clone a Repository
+#### Clone Repository
 
 ```bash
 git clone https://github.com/yourusername/repo.git
 ```
 
-#### Pull Latest Changes
+> Creates a local working copy.
+
+#### Pull Latest Changes
 
 ```bash
 git pull origin main
 ```
 
-#### Quick Add/Commit/Push
+> Syncs local *main* with remote.
+
+#### Quick Add / Commit / Push
 
 ```bash
 git add .
@@ -544,49 +884,24 @@ git commit -m "Update notes"
 git push origin main
 ```
 
-* **Use Case**: Routine updates to `codebook.sherafy.com`, `obj-test` repo, or AIO prototypes.
+> Fast‑path workflow for small updates.
 
 ---
 
-### Nginx / Apache Config Test
+## 🔀 Miscellaneous Tools
 
-#### Apache Config Test
-
-```bash
-sudo apachectl configtest
-```
-
-#### Nginx Config Test
-
-```bash
-sudo nginx -t
-```
-
-* **Use Case**: Validate syntax before restarting web servers.
-
----
-
-### Miscellaneous
-
-### Generate UUID (Handy for API keys / doc IDs)
+#### Generate UUID
 
 ```bash
 uuidgen
 ```
 
-#### Show Current IP (external)
+> Handy for unique filenames or API keys.
+
+#### Show Public IP
 
 ```bash
 curl ifconfig.me
 ```
 
-* **Purpose**: Validate public IP when troubleshooting routing or DNS.
-
-
-
-
-<br>
-
-## ISPConfig Tips
-Common file paths:
-`/var/www/clients/client0/web1/`
+> Confirms external address.
