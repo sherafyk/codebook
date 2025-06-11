@@ -1,65 +1,59 @@
-# 🧠 Sherafy Codebook
+# Sherafy Codebook
 
-A carefully organized reference of your most–used server‑side, DevOps, and GitHub SSH commands. Everything is grouped into intuitive sections (H2), sub‑sections (H3), and every copy‑ready command begins with an H4 heading, a fenced code block, and a concise quoted explanation.
+A carefully organized reference of your most-used server-side, DevOps, and GitHub SSH commands. Everything is grouped into intuitive sections (H2), sub-sections (H3), and every copy-ready command begins with an H4 heading, a fenced code block, and a concise quoted explanation.
 
 ---
 
-## Table of Contents
+## Table of Contents
 
 *(click to jump)*
 
-* [📡 SSH & Remote Access](#📡-ssh-remote-access)
+* [ssh and remote access](#ssh-and-remote-access)
 
-  * [Connecting](#connecting)
-  * [Privilege Escalation](#privilege-escalation)
-* [🔧 System Administration](#🔧-system-administration)
+  * [connecting](#connecting)
+  * [privilege escalation](#privilege-escalation)
+* [system administration](#system-administration)
 
-  * [System Updates](#system-updates)
-  * [Reboot & Power](#reboot--power)
-  * [Resource Monitoring](#resource-monitoring)
-  * [Cleanup](#cleanup)
-* [🌐 Web Servers (Apache)](#🌐-web-servers-apache)
+  * [system updates](#system-updates)
+  * [reboot and power](#reboot-and-power)
+  * [resource monitoring](#resource-monitoring)
+  * [cleanup](#cleanup)
+* [web servers apache](#web-servers-apache)
 
-  * [Installation](#installation)
-  * [Service Control](#service-control)
-  * [Configuration Checks](#configuration-checks)
-* [🐳 Docker](#🐳-docker)
+  * [installation](#installation)
+  * [service control](#service-control)
+  * [configuration checks](#configuration-checks)
+* [docker](#docker)
 
-  * [Installation & Service](#installation--service)
-  * [Images](#images)
-  * [Containers](#containers)
-  * [Docker Compose](#docker-compose)
-* [🟢 Node.js & pm2](#🟢-nodejs--pm2)
+  * [installation and service](#installation-and-service)
+  * [images](#images)
+  * [containers](#containers)
+  * [docker compose](#docker-compose)
+* [nodejs and pm2](#nodejs-and-pm2)
 
-  * [Installation](#installation-1)
-  * [Runtime & Process Control](#runtime--process-control)
-* [📂 File Transfer & Backups](#📂-file-transfer--backups)
-* [📦 Package Management (apt)](#📦-package-management-apt)
-* [📊 Monitoring & Logs](#📊-monitoring--logs)
-* [🔥 Firewall (UFW) & Networking](#🔥-firewall-ufw--networking)
-* [⚙️ Service Management (systemd)](#⚙️-service-management-systemd)
-* [📝 File Permissions & Ownership](#📝-file-permissions--ownership)
-* [🔪 Process Management](#🔪-process-management)
-* [🐘 Database Utilities](#🐘-database-utilities)
-* [🛠 Cron Jobs](#🛠-cron-jobs)
-* [🌍 ISPConfig Shortcuts](#🌍-ispconfig-shortcuts)
-* [📰 WordPress CLI](#📰-wordpress-cli)
-* [🐙 Git / GitHub](#🐙-git--github)
-* [🔀 Miscellaneous Tools](#🔀-miscellaneous-tools)
-
-
+  * [installation](#installation-1)
+  * [runtime and process control](#runtime-and-process-control)
+* [file transfer and backups](#file-transfer-and-backups)
+* [package management apt](#package-management-apt)
+* [monitoring and logs](#monitoring-and-logs)
+* [firewall ufw and networking](#firewall-ufw-and-networking)
+* [service management systemd](#service-management-systemd)
+* [file permissions and ownership](#file-permissions-and-ownership)
+* [process management](#process-management)
+* [database utilities](#database-utilities)
+* [cron jobs](#cron-jobs)
+* [ispconfig shortcuts](#ispconfig-shortcuts)
+* [wordpress cli](#wordpress-cli)
+* [git and github](#git-and-github)
+* [miscellaneous tools](#miscellaneous-tools)
 
 ---
 
-If you want your **Table of Contents auto-updated** as you edit, I recommend the [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) extension for VS Code!
+## ssh and remote access
 
----
+### connecting
 
-## 📡 SSH & Remote Access
-
-### Connecting
-
-#### Connect to VPS Server
+#### connect to vps server
 
 ```bash
 ssh username@your-server-ip
@@ -67,31 +61,31 @@ ssh username@your-server-ip
 
 > Opens an SSH session to the target host. Replace *username* and *IP* accordingly.
 
-#### Use SSH Key Instead of Password
+#### use ssh key instead of password
 
 ```bash
 ssh -i /path/to/private_key username@your-server-ip
 ```
 
-> Authenticates with an SSH key for stronger, password‑less log‑ins. Keep private keys secure and permissions at `600`.
+> Authenticates with an SSH key for stronger, passwordless logins. Keep private keys secure and permissions at `600`.
 
-### Privilege Escalation
+### privilege escalation
 
-#### Switch to Root
+#### switch to root
 
 ```bash
 sudo -i
 ```
 
-> Starts a root shell so you don’t need to prepend each command with `sudo`. Use sparingly on production servers.
+> Starts a root shell so you don’t need to prepend each command with `sudo`. Use sparingly on production servers.
 
 ---
 
-## 🔧 System Administration
+## system administration
 
-### System Updates
+### system updates
 
-#### Update & Upgrade Packages
+#### update and upgrade packages
 
 ```bash
 sudo apt update && sudo apt upgrade -y
@@ -99,7 +93,7 @@ sudo apt update && sudo apt upgrade -y
 
 > Refreshes package lists and installs available updates.
 
-#### Full Distribution Upgrade
+#### full distribution upgrade
 
 ```bash
 sudo apt full-upgrade -y
@@ -107,7 +101,7 @@ sudo apt full-upgrade -y
 
 > Performs a more aggressive upgrade (can include kernel / dependency changes).
 
-#### Upgrade to Next Release (Advanced)
+#### upgrade to next release (advanced)
 
 ```bash
 sudo do-release-upgrade
@@ -115,7 +109,7 @@ sudo do-release-upgrade
 
 > Moves Ubuntu/Debian to the next release. Backup and test first.
 
-#### Fix Broken Dependencies
+#### fix broken dependencies
 
 ```bash
 sudo apt --fix-broken install
@@ -123,9 +117,9 @@ sudo apt --fix-broken install
 
 > Attempts to resolve incomplete or conflicting package installs.
 
-### Reboot & Power
+### reboot and power
 
-#### Reboot Server
+#### reboot server
 
 ```bash
 sudo reboot
@@ -133,7 +127,7 @@ sudo reboot
 
 > Gracefully restarts the machine.
 
-#### Shutdown Server
+#### shutdown server
 
 ```bash
 sudo poweroff
@@ -141,9 +135,9 @@ sudo poweroff
 
 > Powers down the system cleanly.
 
-### Resource Monitoring
+### resource monitoring
 
-#### Check Uptime
+#### check uptime
 
 ```bash
 uptime
@@ -151,7 +145,7 @@ uptime
 
 > Shows how long the system has been running and current load averages.
 
-#### Top‑Style Monitor (htop)
+#### top-style monitor (htop)
 
 ```bash
 htop
@@ -159,9 +153,9 @@ htop
 
 > Interactive process viewer (install with `sudo apt install htop`).
 
-### Cleanup
+### cleanup
 
-#### Remove Unused Packages
+#### remove unused packages
 
 ```bash
 sudo apt autoremove -y
@@ -169,7 +163,7 @@ sudo apt autoremove -y
 
 > Deletes orphaned dependencies.
 
-#### Clean apt Cache
+#### clean apt cache
 
 ```bash
 sudo apt clean
@@ -179,11 +173,11 @@ sudo apt clean
 
 ---
 
-## 🌐 Web Servers (Apache)
+## web servers apache
 
-### Installation
+### installation
 
-#### Install Apache
+#### install apache
 
 ```bash
 sudo apt install apache2 -y
@@ -191,9 +185,9 @@ sudo apt install apache2 -y
 
 > Installs the Apache HTTP server on Debian/Ubuntu.
 
-### Service Control
+### service control
 
-#### Start Apache
+#### start apache
 
 ```bash
 sudo systemctl start apache2
@@ -201,7 +195,7 @@ sudo systemctl start apache2
 
 > Launches the web server immediately.
 
-#### Stop Apache
+#### stop apache
 
 ```bash
 sudo systemctl stop apache2
@@ -209,7 +203,7 @@ sudo systemctl stop apache2
 
 > Halts the service.
 
-#### Restart Apache
+#### restart apache
 
 ```bash
 sudo systemctl restart apache2
@@ -217,7 +211,7 @@ sudo systemctl restart apache2
 
 > Stops and starts Apache—use after config changes.
 
-#### Reload Apache Config
+#### reload apache config
 
 ```bash
 sudo systemctl reload apache2
@@ -225,7 +219,7 @@ sudo systemctl reload apache2
 
 > Applies config changes without dropping live connections.
 
-#### Enable Apache on Boot
+#### enable apache on boot
 
 ```bash
 sudo systemctl enable apache2
@@ -233,7 +227,7 @@ sudo systemctl enable apache2
 
 > Ensures Apache starts automatically after reboot.
 
-#### Disable Apache on Boot
+#### disable apache on boot
 
 ```bash
 sudo systemctl disable apache2
@@ -241,9 +235,9 @@ sudo systemctl disable apache2
 
 > Removes Apache from the startup sequence.
 
-### Configuration Checks
+### configuration checks
 
-#### Apache Config Test
+#### apache config test
 
 ```bash
 sudo apache2ctl configtest
@@ -253,11 +247,11 @@ sudo apache2ctl configtest
 
 ---
 
-## 🐳 Docker
+## docker
 
-### Installation & Service
+### installation and service
 
-#### Install Docker Engine
+#### install docker engine
 
 ```bash
 sudo apt install docker.io -y
@@ -265,7 +259,7 @@ sudo apt install docker.io -y
 
 > Installs Docker from the distro repo.
 
-#### Start Docker Daemon
+#### start docker daemon
 
 ```bash
 sudo systemctl start docker
@@ -273,15 +267,15 @@ sudo systemctl start docker
 
 > Begins the Docker service.
 
-#### Enable Docker on Boot
+#### enable docker on boot
 
 ```bash
 sudo systemctl enable docker
 ```
 
-> Auto‑starts Docker after reboot.
+> Auto-starts Docker after reboot.
 
-#### Check Docker Version
+#### check docker version
 
 ```bash
 docker --version
@@ -289,9 +283,9 @@ docker --version
 
 > Verifies the client/daemon version.
 
-### Images
+### images
 
-#### Pull Image from Hub
+#### pull image from hub
 
 ```bash
 docker pull nginx
@@ -299,7 +293,7 @@ docker pull nginx
 
 > Downloads the latest Nginx image.
 
-#### List Downloaded Images
+#### list downloaded images
 
 ```bash
 docker images
@@ -307,9 +301,9 @@ docker images
 
 > Local image inventory.
 
-### Containers
+### containers
 
-#### Run Container (Detached)
+#### run container (detached)
 
 ```bash
 docker run -d --name mynginx nginx
@@ -317,7 +311,7 @@ docker run -d --name mynginx nginx
 
 > Spins up *mynginx* in the background.
 
-#### List Running Containers
+#### list running containers
 
 ```bash
 docker ps
@@ -325,7 +319,7 @@ docker ps
 
 > Shows active containers.
 
-#### List All Containers
+#### list all containers
 
 ```bash
 docker ps -a
@@ -333,7 +327,7 @@ docker ps -a
 
 > Includes stopped containers.
 
-#### Stop Container
+#### stop container
 
 ```bash
 docker stop mynginx
@@ -341,7 +335,7 @@ docker stop mynginx
 
 > Gracefully stops the container.
 
-#### Restart Container
+#### restart container
 
 ```bash
 docker restart mynginx
@@ -349,7 +343,7 @@ docker restart mynginx
 
 > Stops then starts the container.
 
-#### Remove Container
+#### remove container
 
 ```bash
 docker rm mynginx
@@ -357,7 +351,7 @@ docker rm mynginx
 
 > Deletes a stopped container.
 
-#### Remove Image
+#### remove image
 
 ```bash
 docker rmi nginx
@@ -365,7 +359,7 @@ docker rmi nginx
 
 > Frees disk space by deleting the image.
 
-#### Exec into Container
+#### exec into container
 
 ```bash
 docker exec -it mynginx bash
@@ -373,7 +367,7 @@ docker exec -it mynginx bash
 
 > Opens an interactive shell inside the container.
 
-#### Build Image from Dockerfile
+#### build image from dockerfile
 
 ```bash
 docker build -t myapp .
@@ -381,9 +375,9 @@ docker build -t myapp .
 
 > Creates the *myapp* image from the current directory context.
 
-### Docker Compose
+### docker compose
 
-#### Start Compose Stack
+#### start compose stack
 
 ```bash
 docker-compose up -d
@@ -391,7 +385,7 @@ docker-compose up -d
 
 > Builds (if needed) and runs services in detached mode.
 
-#### Stop & Remove Stack
+#### stop and remove stack
 
 ```bash
 docker-compose down
@@ -401,11 +395,11 @@ docker-compose down
 
 ---
 
-## 🟢 Node.js & pm2
+## nodejs and pm2
 
-### Installation
+### installation
 
-#### Install Node via NVM
+#### install node via nvm
 
 ```bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
@@ -415,7 +409,7 @@ nvm install node
 
 > Installs NVM then the latest LTS Node.js.
 
-#### Check Node Version
+#### check node version
 
 ```bash
 node -v
@@ -423,7 +417,7 @@ node -v
 
 > Prints Node version.
 
-#### Check npm Version
+#### check npm version
 
 ```bash
 npm -v
@@ -431,17 +425,17 @@ npm -v
 
 > Prints npm version.
 
-### Runtime & Process Control
+### runtime and process control
 
-#### Install pm2 Globally
+#### install pm2 globally
 
 ```bash
 sudo npm install -g pm2
 ```
 
-> Production‑grade process manager.
+> Production-grade process manager.
 
-#### Start App with pm2
+#### start app with pm2
 
 ```bash
 pm2 start app.js
@@ -449,7 +443,7 @@ pm2 start app.js
 
 > Launches *app.js* under pm2 supervision.
 
-#### List pm2 Processes
+#### list pm2 processes
 
 ```bash
 pm2 list
@@ -457,15 +451,15 @@ pm2 list
 
 > Overview of managed apps.
 
-#### Restart pm2 App
+#### restart pm2 app
 
 ```bash
 pm2 restart app
 ```
 
-> Zero‑downtime restart.
+> Zero-downtime restart.
 
-#### Stop pm2 App
+#### stop pm2 app
 
 ```bash
 pm2 stop app
@@ -473,7 +467,7 @@ pm2 stop app
 
 > Gracefully stops the app.
 
-#### View Live Logs
+#### view live logs
 
 ```bash
 pm2 logs app
@@ -481,15 +475,15 @@ pm2 logs app
 
 > Streams log output.
 
-#### Save pm2 Process List
+#### save pm2 process list
 
 ```bash
 pm2 save
 ```
 
-> Persists process list for reboot‑survival.
+> Persists process list for reboot-survival.
 
-#### Enable pm2 on Boot
+#### enable pm2 on boot
 
 ```bash
 pm2 startup
@@ -499,9 +493,9 @@ pm2 startup
 
 ---
 
-## 📂 File Transfer & Backups
+## file transfer and backups
 
-#### Copy File to Server
+#### copy file to server
 
 ```bash
 scp /local/path/file username@your-server-ip:/remote/path
@@ -509,7 +503,7 @@ scp /local/path/file username@your-server-ip:/remote/path
 
 > Secure copy from local → remote.
 
-#### Copy File from Server
+#### copy file from server
 
 ```bash
 scp username@your-server-ip:/remote/path/file /local/path
@@ -517,7 +511,7 @@ scp username@your-server-ip:/remote/path/file /local/path
 
 > Remote → local.
 
-#### Recursive Directory Copy
+#### recursive directory copy
 
 ```bash
 scp -r /local/dir username@your-server-ip:/remote/dir
@@ -525,7 +519,7 @@ scp -r /local/dir username@your-server-ip:/remote/dir
 
 > Copies entire folders.
 
-#### MySQL Dump Database
+#### mysql dump database
 
 ```bash
 mysqldump -u username -p database_name > backup.sql
@@ -533,7 +527,7 @@ mysqldump -u username -p database_name > backup.sql
 
 > Creates SQL backup.
 
-#### Restore MySQL Database
+#### restore mysql database
 
 ```bash
 mysql -u username -p database_name < backup.sql
@@ -541,7 +535,7 @@ mysql -u username -p database_name < backup.sql
 
 > Imports backup into DB.
 
-#### Tar and Compress Directory
+#### tar and compress directory
 
 ```bash
 tar -czvf backup.tar.gz /path/to/directory
@@ -549,7 +543,7 @@ tar -czvf backup.tar.gz /path/to/directory
 
 > Creates compressed archive.
 
-#### Extract Compressed Archive
+#### extract compressed archive
 
 ```bash
 tar -xzvf backup.tar.gz
@@ -559,9 +553,9 @@ tar -xzvf backup.tar.gz
 
 ---
 
-## 📦 Package Management (apt)
+## package management apt
 
-#### Search for Package
+#### search for package
 
 ```bash
 apt search packagename
@@ -569,7 +563,7 @@ apt search packagename
 
 > Finds candidate packages.
 
-#### Install Package
+#### install package
 
 ```bash
 sudo apt install package-name
@@ -577,7 +571,7 @@ sudo apt install package-name
 
 > Installs desired software.
 
-#### Reinstall Package
+#### reinstall package
 
 ```bash
 sudo apt install --reinstall package-name
@@ -585,7 +579,7 @@ sudo apt install --reinstall package-name
 
 > Repairs broken installs.
 
-#### Remove Package
+#### remove package
 
 ```bash
 sudo apt remove package-name
@@ -593,7 +587,7 @@ sudo apt remove package-name
 
 > Uninstalls but keeps config.
 
-#### Purge Package
+#### purge package
 
 ```bash
 sudo apt purge package-name
@@ -601,7 +595,7 @@ sudo apt purge package-name
 
 > Removes package and configs.
 
-#### List Installed Packages
+#### list installed packages
 
 ```bash
 dpkg --get-selections
@@ -609,7 +603,7 @@ dpkg --get-selections
 
 > Useful for audits & migrations.
 
-#### Show Package Info
+#### show package info
 
 ```bash
 apt show package-name
@@ -619,33 +613,33 @@ apt show package-name
 
 ---
 
-## 📊 Monitoring & Logs
+## monitoring and logs
 
-#### View System Journal
+#### view system journal
 
 ```bash
 sudo journalctl -xe
 ```
 
-> Shows recent system‑wide logs with errors highlighted.
+> Shows recent system-wide logs with errors highlighted.
 
-#### Follow Apache Error Log
+#### follow apache error log
 
 ```bash
 sudo tail -f /var/log/apache2/error.log
 ```
 
-> Live‑streams web‑server errors.
+> Live-streams web-server errors.
 
-#### Follow Syslog
+#### follow syslog
 
 ```bash
 sudo tail -f /var/log/syslog
 ```
 
-> Distribution‑agnostic system messages.
+> Distribution-agnostic system messages.
 
-#### View Listening Ports
+#### view listening ports
 
 ```bash
 sudo netstat -tuln | grep LISTEN
@@ -655,17 +649,17 @@ sudo netstat -tuln | grep LISTEN
 
 ---
 
-## 🔥 Firewall (UFW) & Networking
+## firewall ufw and networking
 
-#### Allow Port (Example 2501)
+#### allow port (example 2501)
 
 ```bash
 sudo ufw allow 2501/tcp
 ```
 
-> Opens port 2501 for TCP traffic.
+> Opens port 2501 for TCP traffic.
 
-#### Reload UFW
+#### reload ufw
 
 ```bash
 sudo ufw reload
@@ -673,7 +667,7 @@ sudo ufw reload
 
 > Applies rule changes.
 
-#### Check Firewall Status
+#### check firewall status
 
 ```bash
 sudo ufw status
@@ -681,7 +675,7 @@ sudo ufw status
 
 > Lists active rules.
 
-#### Check Port Reachability (Localhost)
+#### check port reachability (localhost)
 
 ```bash
 curl -I http://127.0.0.1:2501
@@ -691,9 +685,9 @@ curl -I http://127.0.0.1:2501
 
 ---
 
-## ⚙️ Service Management (systemd)
+## service management systemd
 
-#### Restart Apache (Web)
+#### restart apache (web)
 
 ```bash
 sudo systemctl restart apache2
@@ -701,7 +695,7 @@ sudo systemctl restart apache2
 
 > Common after editing vhosts.
 
-#### Restart PHP‑FPM
+#### restart php-fpm
 
 ```bash
 sudo systemctl restart php8.2-fpm
@@ -709,7 +703,7 @@ sudo systemctl restart php8.2-fpm
 
 > Swap version as needed.
 
-#### Restart ISPConfig Daemon
+#### restart ispconfig daemon
 
 ```bash
 sudo systemctl restart ispconfig_server
@@ -719,9 +713,9 @@ sudo systemctl restart ispconfig_server
 
 ---
 
-## 📝 File Permissions & Ownership
+## file permissions and ownership
 
-#### Change Ownership (Recursive)
+#### change ownership (recursive)
 
 ```bash
 sudo chown -R web16:client0 /var/www/clients/client0/web16/web
@@ -729,7 +723,7 @@ sudo chown -R web16:client0 /var/www/clients/client0/web16/web
 
 > Typical ISPConfig ownership pattern.
 
-#### Change Permissions (Directories 755)
+#### change permissions (directories 755)
 
 ```bash
 sudo chmod -R 755 /path/to/directory
@@ -737,7 +731,7 @@ sudo chmod -R 755 /path/to/directory
 
 > Grants execute to owner/group/world for directories.
 
-#### Add Immutable Attribute
+#### add immutable attribute
 
 ```bash
 sudo chattr +i /var/www/clients/client0/web17
@@ -745,7 +739,7 @@ sudo chattr +i /var/www/clients/client0/web17
 
 > Protects files from modification—even by root.
 
-#### Remove Immutable Attribute
+#### remove immutable attribute
 
 ```bash
 sudo chattr -i /var/www/clients/client0/web17
@@ -755,25 +749,25 @@ sudo chattr -i /var/www/clients/client0/web17
 
 ---
 
-## 🔪 Process Management
+## process management
 
-#### Monitor Processes (top)
+#### monitor processes (top)
 
 ```bash
 top
 ```
 
-> Quick real‑time CPU / memory view.
+> Quick real-time CPU / memory view.
 
-#### Kill Process by PID
+#### kill process by pid
 
 ```bash
 kill -9 PID
 ```
 
-> Force‑terminates the given PID.
+> Force-terminates the given PID.
 
-#### Find Process by Port
+#### find process by port
 
 ```bash
 sudo lsof -i :PORT
@@ -783,23 +777,23 @@ sudo lsof -i :PORT
 
 ---
 
-## 🐘 Database Utilities
+## database utilities
 
-*See File Transfer & Backups section for dump/restore commands.*
+*See file transfer and backups section for dump/restore commands.*
 
 ---
 
-## 🛠 Cron Jobs
+## cron jobs
 
-#### Edit Crontab
+#### edit crontab
 
 ```bash
 crontab -e
 ```
 
-> Opens the current user’s job list in `$EDITOR`.
+> Opens the current user’s job list in `$EDITOR`.
 
-#### List Cron Jobs
+#### list cron jobs
 
 ```bash
 crontab -l
@@ -809,9 +803,9 @@ crontab -l
 
 ---
 
-## 🌍 ISPConfig Shortcuts
+## ispconfig shortcuts
 
-#### Update ISPConfig
+#### update ispconfig
 
 ```bash
 cd /tmp && wget -O ispconfig_update.sh https://get.ispconfig.org && sudo bash ispconfig_update.sh
@@ -819,7 +813,7 @@ cd /tmp && wget -O ispconfig_update.sh https://get.ispconfig.org && sudo bash is
 
 > Official update method; backup first.
 
-#### Restart Core Services
+#### restart core services
 
 ```bash
 sudo systemctl restart apache2 postfix dovecot pure-ftpd-mysql
@@ -827,7 +821,7 @@ sudo systemctl restart apache2 postfix dovecot pure-ftpd-mysql
 
 > Web, mail, and FTP stack reload.
 
-#### Backup ISPConfig Database
+#### backup ispconfig database
 
 ```bash
 mysqldump -u root -p dbispconfig > dbispconfig_backup.sql
@@ -837,9 +831,9 @@ mysqldump -u root -p dbispconfig > dbispconfig_backup.sql
 
 ---
 
-## 📰 WordPress CLI
+## wordpress cli
 
-#### Update All Plugins
+#### update all plugins
 
 ```bash
 wp plugin update --all
@@ -847,7 +841,7 @@ wp plugin update --all
 
 > Keeps plugins patched.
 
-#### Flush WP Cache
+#### flush wp cache
 
 ```bash
 wp cache flush
@@ -855,7 +849,7 @@ wp cache flush
 
 > Clears transients/object cache.
 
-#### Search & Replace DB Strings
+#### search and replace db strings
 
 ```bash
 wp search-replace 'oldurl.com' 'newurl.com'
@@ -865,9 +859,9 @@ wp search-replace 'oldurl.com' 'newurl.com'
 
 ---
 
-## 🐙 Git / GitHub
+## git and github
 
-#### Clone Repository
+#### clone repository
 
 ```bash
 git clone https://github.com/yourusername/repo.git
@@ -875,7 +869,7 @@ git clone https://github.com/yourusername/repo.git
 
 > Creates a local working copy.
 
-#### Pull Latest Changes
+#### pull latest changes
 
 ```bash
 git pull origin main
@@ -883,7 +877,7 @@ git pull origin main
 
 > Syncs local *main* with remote.
 
-#### Quick Add / Commit / Push
+#### quick add / commit / push
 
 ```bash
 git add .
@@ -891,13 +885,13 @@ git commit -m "Update notes"
 git push origin main
 ```
 
-> Fast‑path workflow for small updates.
+> Fast-path workflow for small updates.
 
 ---
 
-## 🔀 Miscellaneous Tools
+## miscellaneous tools
 
-#### Generate UUID
+#### generate uuid
 
 ```bash
 uuidgen
@@ -905,7 +899,7 @@ uuidgen
 
 > Handy for unique filenames or API keys.
 
-#### Show Public IP
+#### show public ip
 
 ```bash
 curl ifconfig.me
